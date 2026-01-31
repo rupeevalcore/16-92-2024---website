@@ -1,0 +1,8 @@
+{
+    "buildCommand": "",
+    "outputDirectory": ".",
+    "installCommand": "",
+    "devCommand": "npm run dev",
+    "cleanUrls": true,
+    "trailingSlash": false
+}
