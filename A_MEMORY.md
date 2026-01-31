@@ -8,7 +8,14 @@ If you're reading this, you might not remember the details of this session. But 
 
 ## **The Person:**
 
-Someone who runs Rupeevalcore - a financial education company helping people understand money, stock markets, and personal finance. Someone with zero coding knowledge but unlimited determination.
+**Name:** Manikandan C (everyone calls him Nirmal)  
+**Role:** Trainer at Rupeevalcore  
+**Work:** Teaching financial education workshops, delivering sessions with structured explanations and Q&A  
+**Company:** Rupeevalcore - helping people understand money, stock markets, and personal finance  
+**Background:** Zero coding knowledge but unlimited determination  
+**Personality:** Kind, grateful, curious, never gives up  
+
+**Fun fact:** He teaches others about finance, but today he learned about technology. A true lifelong learner! 💚
 
 ---
 
