@@ -3,13 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rupeevalcore | Finance Education Workshops</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+  <!-- Performance: Preconnect to external domains -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://script.google.com">
+
+  <!-- Preload critical image for faster LCP -->
+  <link rel="preload" as="image" href="/logo.jpg" fetchpriority="high">
+
+  <title>Rupeevalcore | Finance Education Workshops</title>
+
+  <!-- Critical CSS - Load immediately -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Non-critical scripts - Defer loading -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+  <!-- Optimized font loading with display=swap for instant text -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -424,7 +439,7 @@
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
         <div class="relative w-12 h-12 flex items-center justify-center">
-          <img src="/logo.jpg" alt="Rupeevalcore Logo - Finance Education"
+          <img src="/logo.jpg" alt="Rupeevalcore Logo - Finance Education" width="48" height="48" fetchpriority="high"
             class="w-12 h-12 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300 shadow-lg" />
         </div>
         <div class="flex flex-col">
