@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [],
+    "installCommand": "echo 'Skipping install'",
+    "buildCommand": "echo 'Skipping build'",
+    "outputDirectory": "public",
+    "routes": [
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ]
+}

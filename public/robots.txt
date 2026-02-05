@@ -1,5 +1,35 @@
+# Robots.txt for Rupeevalcore
+# Allow all search engines to crawl everything
+
 User-agent: *
 Allow: /
-Disallow: /admin/
 
-Sitemap: https://www.rupeevalcore.com/sitemap.xml
+# Sitemap location
+Sitemap: https://www.rupeevalcore.in/sitemap.xml
+
+# Crawl-delay (optional - don't overload server)
+Crawl-delay: 1
+
+# Block specific bots (optional - add if needed)
+# User-agent: BadBot
+# Disallow: /
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
