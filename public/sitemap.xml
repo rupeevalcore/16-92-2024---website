@@ -1,24 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
   <url>
-    <loc>https://www.rupeevalcore.com/</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.rupeevalcore.in/</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.rupeevalcore.in/logo.jpg</image:loc>
+      <image:title>Rupeevalcore Logo</image:title>
+      <image:caption>Financial Education Workshops in Chennai</image:caption>
+    </image:image>
   </url>
+
+  <!-- About Section -->
   <url>
-    <loc>https://www.rupeevalcore.com/#curriculum</loc>
+    <loc>https://www.rupeevalcore.in/#about</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Curriculum Section -->
   <url>
-    <loc>https://www.rupeevalcore.com/#pricing</loc>
+    <loc>https://www.rupeevalcore.in/#curriculum</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Learning Levels Section -->
+  <url>
+    <loc>https://www.rupeevalcore.in/#learning-levels</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Pricing/Learning Options Section -->
   <url>
-    <loc>https://www.rupeevalcore.com/#about</loc>
+    <loc>https://www.rupeevalcore.in/#pricing</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://www.rupeevalcore.in/#contact</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Register Section -->
+  <url>
+    <loc>https://www.rupeevalcore.in/#register</loc>
+    <lastmod>2026-02-06T01:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
