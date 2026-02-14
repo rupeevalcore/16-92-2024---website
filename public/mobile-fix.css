@@ -161,9 +161,14 @@
         opacity: 0.1 !important;
     }
 
-    /* Fix navigation on mobile */
+    /* Fix navigation on mobile - removed aggressive !important padding that breaks layout */
     nav {
-        padding: 0.75rem 1rem !important;
+        padding: 0 !important;
+    }
+
+    /* Support for modern phone notches */
+    .safe-top {
+        padding-top: env(safe-area-inset-top) !important;
     }
 
     /* Images - responsive */
