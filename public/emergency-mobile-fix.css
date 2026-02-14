@@ -1,0 +1,61 @@
+/* ============================================
+   NUCLEAR OPTION - CERTIFICATION FIX
+   Forces spacing on ALL possible patterns
+   ============================================ */
+
+/* Target EVERYTHING on mobile */
+@media (max-width: 768px) {
+
+    /* Every single border class */
+    [class*="border-"],
+    [class*="emerald"],
+    [class*="green"],
+    [class*="certification"],
+    [class*="certified"],
+    [class*="instructor"] {
+        margin-bottom: 5rem !important;
+        padding-bottom: 2rem !important;
+        display: block !important;
+        clear: both !important;
+    }
+
+    /* Any div with green/emerald */
+    div[class*="bg-emerald"],
+    div[class*="border-emerald"],
+    div[class*="text-emerald"] {
+        margin-bottom: 5rem !important;
+    }
+
+    /* Target by content if classes don't work */
+    div:has(+ div) {
+        margin-bottom: 3rem !important;
+    }
+
+    /* All rounded elements */
+    [class*="rounded"] {
+        margin-bottom: 3rem !important;
+    }
+
+    /* All bordered elements */
+    [class*="border"] {
+        margin-bottom: 3rem !important;
+    }
+
+    /* Safety margin on ALL divs */
+    div {
+        margin-bottom: 1rem !important;
+    }
+
+    /* Sections */
+    section>div {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Specific mobile fix for nested structures */
+    .max-w-7xl>div,
+    .max-w-6xl>div,
+    .max-w-5xl>div {
+        margin-bottom: 2rem !important;
+    }
+}
