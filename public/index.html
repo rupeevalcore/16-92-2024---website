@@ -1496,14 +1496,15 @@
   <!-- NAVBAR -->
   <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="relative w-12 h-12 flex items-center justify-center">
+      <a href="#" class="flex items-center gap-2 md:gap-3 group">
+        <div class="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
           <img src="/logo.jpg" alt="Rupeevalcore Logo - Finance Education"
-            class="w-12 h-12 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300 shadow-lg" />
+            class="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300 shadow-lg" />
         </div>
         <div class="flex flex-col">
-          <span class="text-base font-semibold tracking-tight text-white leading-none">Rupeevalcore</span>
-          <span class="leading-none text-xs font-medium text-slate-400 tracking-wide mt-1">Finance Education</span>
+          <span class="text-sm md:text-base font-semibold tracking-tight text-white leading-none">Rupeevalcore</span>
+          <span class="leading-none text-[10px] md:text-xs font-medium text-slate-400 tracking-wide mt-1">Finance
+            Education</span>
         </div>
       </a>
 
@@ -1518,14 +1519,15 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
         target="_blank" rel="noopener noreferrer"
         class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.08] border border-white/10 text-xs font-semibold text-white hover:bg-white/[0.12] transition-all hover:border-white/20 group">
-        Register
-        <iconify-icon icon="solar:arrow-right-linear" width="14"
-          class="group-hover:translate-x-0.5 transition-transform" stroke-width="1.5"></iconify-icon>
+        Register Interest
+        <iconify-icon icon="solar:arrow-right-linear" width="16"
+          class="group-hover:translate-x-0.5 transition-transform" stroke-width="2"></iconify-icon>
       </a>
 
-      <button class="md:hidden text-slate-300 hover:text-white"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Open menu">
-        <iconify-icon icon="solar:hamburger-menu-linear" width="24" stroke-width="1.5"></iconify-icon>
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="24" class="text-white"></iconify-icon>
       </button>
     </div>
 
@@ -2259,11 +2261,11 @@
 
         <!-- One-to-One Sessions Card -->
         <div
-          class="p-8 rounded-2xl border-2 border-blue-500/40 bg-gradient-to-br from-blue-500/10 to-blue-600/5 hover:border-blue-500/60 transition-all shadow-lg shadow-blue-500/10 relative">
+          class="p-5 md:p-8 rounded-2xl border-2 border-blue-500/40 bg-gradient-to-br from-blue-500/10 to-blue-600/5 hover:border-blue-500/60 transition-all shadow-lg shadow-blue-500/10 relative mt-4 md:mt-0">
           <!-- Premium Badge -->
-          <div class="absolute top-6 right-6">
+          <div class="absolute -top-3 right-4 md:top-6 md:right-6">
             <span
-              class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wide flex items-center gap-1 shadow-lg">
+              class="px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] md:text-xs font-bold uppercase tracking-wide flex items-center gap-1 shadow-lg border border-blue-400/50">
               <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
               Premium
             </span>
