@@ -1,16 +1,23 @@
 {
     "version": 2,
-    "builds": [],
     "installCommand": "echo 'Skipping install'",
     "buildCommand": "echo 'Skipping build'",
     "outputDirectory": "public",
-    "routes": [
+    "rewrites": [
         {
-            "handle": "filesystem"
-        },
+            "source": "/(.*)",
+            "destination": "/$1"
+        }
+    ],
+    "headers": [
         {
-            "src": "/(.*)",
-            "dest": "/$1"
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=0, must-revalidate"
+                }
+            ]
         }
     ]
 }
