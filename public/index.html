@@ -1415,6 +1415,71 @@
         margin-bottom: 60px !important;
       }
     }
+
+    /* ========================================
+       ULTRA-PREMIUM MOBILE KIT
+       Makes the web app feel like a native app
+       ======================================== */
+
+    html {
+      -webkit-tap-highlight-color: transparent;
+      /* Removes cheap gray tap box */
+    }
+
+    /* Sleek Scrollbar for Mobile */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+
+      /* Deep OLED Black Backgrounds */
+      body,
+      .bg-background {
+        background-color: #000000 !important;
+      }
+
+      /* Richer Glassmorphism for Mobile Cards */
+      .p-7,
+      .p-8,
+      .p-6,
+      .p-5 {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Better Text Readability Outdoors */
+      p.text-slate-400 {
+        color: #94a3b8 !important;
+        /* Slightly lighter gray for contrast */
+        font-weight: 450 !important;
+        /* Micro-bold for sharpness */
+      }
+
+      /* Premium Hero Text */
+      h1 {
+        letter-spacing: -0.02em;
+        text-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      /* Native App Feel for Buttons */
+      button,
+      a.bg-blue-600 {
+        box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39) !important;
+      }
+    }
   </style>
 </head>
 
