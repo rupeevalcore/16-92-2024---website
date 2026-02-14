@@ -1279,6 +1279,142 @@
         animation: none !important;
       }
     }
+
+    /* ========================================
+       SCROLL REVEAL ANIMATIONS
+       Works on both mobile and desktop
+       ======================================== */
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ========================================
+       TOUCH-FRIENDLY TAP EFFECTS (MOBILE)
+       ======================================== */
+
+    @media (hover: none) and (pointer: coarse) {
+
+      /* Tap ripple effect on cards */
+      .p-7,
+      .p-8,
+      .p-6 {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .p-7:active,
+      .p-8:active,
+      .p-6:active {
+        transform: scale(0.97);
+        transition: transform 0.15s ease;
+      }
+
+      /* Buttons get a subtle press effect */
+      a[href*="google.com/forms"]:active,
+      a[href*="wa.me"]:active,
+      button:active {
+        transform: scale(0.95) !important;
+        transition: transform 0.1s ease !important;
+      }
+
+      /* Make touch targets bigger on mobile */
+      a,
+      button {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* ========================================
+       ANIMATED NUMBER COUNTERS
+       ======================================== */
+    @keyframes count-up {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .counter-animate {
+      animation: count-up 0.6s ease-out forwards;
+    }
+
+    /* ========================================
+       SMOOTH SECTION DIVIDERS
+       ======================================== */
+    section {
+      position: relative;
+    }
+
+    section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+    }
+
+    /* ========================================
+       ABOUT SECTION MOBILE FIX (100px gap)
+       ======================================== */
+    @media (max-width: 1023px) {
+      .lg\\:col-span-4[style*="margin-bottom: 100px"] {
+        margin-bottom: 60px !important;
+      }
+    }
   </style>
 </head>
 
@@ -2892,6 +3028,75 @@
 
       console.log('💎 Premium Feel Package activated!');
       console.log('✨ CTA glow pulse, breathing badges, floating icons, and scroll progress active!');
+
+      // ========================================
+      // SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+      // Works on both mobile and desktop
+      // ========================================
+
+      // Add scroll-reveal class to all sections and key elements
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section, index) => {
+        // Add reveal to section headings
+        const heading = section.querySelector('h2');
+        if (heading) {
+          heading.classList.add('scroll-reveal');
+          heading.style.transitionDelay = '0.1s';
+        }
+
+        // Add reveal to cards within sections
+        const cards = section.querySelectorAll('.p-7, .p-8, .p-6, .p-5');
+        cards.forEach((card, cardIndex) => {
+          card.classList.add('scroll-reveal');
+          card.style.transitionDelay = `${0.1 + cardIndex * 0.08}s`;
+        });
+
+        // Add reveal to grid containers
+        const grids = section.querySelectorAll('.grid');
+        grids.forEach(grid => {
+          grid.classList.add('scroll-reveal-scale');
+          grid.style.transitionDelay = '0.2s';
+        });
+      });
+
+      // Create IntersectionObserver for scroll reveals
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all scroll-reveal elements
+      document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      console.log('🎬 Scroll reveal animations active!');
+
+      // ========================================
+      // SMOOTH SCROLL FOR ANCHOR LINKS (Mobile)
+      // ========================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      console.log('📱🎨 All mobile + desktop effects loaded!');
     });
   </script>
 
