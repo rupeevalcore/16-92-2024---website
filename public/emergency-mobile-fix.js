@@ -1,55 +1,73 @@
-// Emergency Mobile Overlap Fix - JavaScript
-// Forces spacing on mobile regardless of CSS
+// Dynamic Chatbot Implementation
 
-(function () {
-    // Only run on mobile
-    if (window.innerWidth > 768) return;
-
-    function fixMobileSpacing() {
-        // Find all elements that might be certification badges
-        const selectors = [
-            '[class*="emerald"]',
-            '[class*="certified"]',
-            '[class*="certification"]',
-            '[class*="instructor"]',
-            '[class*="border-green"]',
-            '.border-emerald-500\\/20'
+class ChatBot {
+    constructor() {
+        this.steps = [
+            this.question1,
+            this.question2,
+            this.question3
         ];
+        this.currentStep = 0;
+    }
 
-        selectors.forEach(selector => {
-            try {
-                const elements = document.querySelectorAll(selector);
-                elements.forEach(el => {
-                    el.style.marginBottom = '80px';
-                    el.style.paddingBottom = '30px';
-                    el.style.display = 'block';
-                    el.style.clear = 'both';
+    start() {
+        this.sendMessage("Welcome to the interactive chatbot! Let's begin.");
+        this.nextStep();
+    }
 
-                    // Add space to next element too
-                    if (el.nextElementSibling) {
-                        el.nextElementSibling.style.marginTop = '40px';
-                        el.nextElementSibling.style.paddingTop = '20px';
-                    }
-                });
-            } catch (e) {
-                console.log('Skipping selector:', selector);
-            }
+    nextStep() {
+        if (this.currentStep < this.steps.length) {
+            this.steps[this.currentStep].call(this);
+            this.currentStep++;
+        } else {
+            this.sendMessage("Thank you for your responses!");
+        }
+    }
+
+    question1() {
+        this.sendMessage("What is your name?");
+        this.createResponseButtons(["Submit", "Skip"]);
+    }
+
+    question2() {
+        this.sendMessage("What service are you interested in?");
+        this.createResponseButtons(["Inquiry", "Registration"]);
+    }
+
+    question3() {
+        this.sendMessage("Would you like to receive updates?");
+        this.createResponseButtons(["Yes", "No"]);
+    }
+
+    sendMessage(message) {
+        // Function to display message from the bot with proper styling
+        console.log(`Bot: ${message}`);
+    }
+
+    createResponseButtons(options) {
+        // Function to create buttons for user responses
+        options.forEach(option => {
+            console.log(`Button: ${option}`);
         });
-
-        console.log('✅ Emergency mobile spacing applied!');
+        // Simulate user response handling
+        this.handleUserResponse(options);
     }
 
-    // Run on load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', fixMobileSpacing);
-    } else {
-        fixMobileSpacing();
+    handleUserResponse(options) {
+        // Simulate user selecting an option and navigating if needed
+        const simulatedUserResponse = options[0]; // Simulating the first button click
+        if (simulatedUserResponse === "Registration") {
+            this.navigateToRegistration();
+        }
+        this.nextStep();
     }
 
-    // Re-run on resize (orientation change)
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(fixMobileSpacing, 250);
-    });
-})();
+    navigateToRegistration() {
+        // Function to handle navigation to registration forms
+        console.log("Navigating to registration form...");
+    }
+}
+
+// Initialize and start the chatbot
+const chatbot = new ChatBot();
+chatbot.start();
