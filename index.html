@@ -1,0 +1,3740 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Rupeevalcore | Finance Education Workshops</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+  <!-- Mobile overlap fix CSS -->
+  <link rel="stylesheet" href="/mobile-fix.css">
+
+  <link rel="apple-touch-icon" href="/logo.jpg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["", "sans-serif"],
+          },
+          colors: {
+            background: "#030712",
+            surface: "#0f172a",
+            primary: "#6366f1",
+            secondary: "#a855f7",
+          },
+          animation: {
+            "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+            float: "float 6s ease-in-out infinite",
+            pulse: "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+          },
+          keyframes: {
+            fadeInUp: {
+              "0%": { opacity: "0", transform: "translateY(20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
+            },
+            float: {
+              "0%, 100%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-10px)" },
+            },
+          },
+        },
+      },
+    };
+    (function () {
+      emailjs.init("c5wUsi6kNbeElCjGK");
+    })();
+  </script>
+  <style>
+    body {
+      background-color: #030712;
+      color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(0, 31, 63, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 61, 122, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 0%, #001f3f 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .bg-grid-white {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+    }
+
+    .glass-panel {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5));
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .gradient-border {
+      position: relative;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(12px);
+      border-radius: 0.75rem;
+      z-index: 1;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+    }
+
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(0, 102, 204, 0.2),
+          rgba(0, 61, 122, 0.1),
+          rgba(255, 255, 255, 0));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gradient-border:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(0, 102, 204, 0.5);
+      box-shadow:
+        0 20px 40px -15px rgba(0, 102, 204, 0.4),
+        0 0 20px rgba(0, 102, 204, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .gradient-border:hover::before {
+      opacity: 1;
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #ffffff, #e2e8f0, #94a3b8, #ffffff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShimmer 4s linear infinite;
+    }
+
+    @keyframes textShimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    .text-gradient-logo {
+      background: linear-gradient(to right, #0066cc, #003d7a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .perspective-container {
+      perspective: 2000px;
+    }
+
+    .card-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    }
+
+    .hero-tilt {
+      transform: rotateX(8deg) rotateY(-4deg) rotateZ(1deg);
+      box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.5);
+      transition: transform 0.8s ease-out;
+    }
+
+    .hero-tilt:hover {
+      transform: rotateX(2deg) rotateY(-1deg) rotateZ(0deg) scale(1.02);
+      box-shadow:
+        -15px 15px 60px rgba(0, 102, 204, 0.3),
+        0 0 40px rgba(0, 102, 204, 0.15);
+    }
+
+    .input-premium {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .input-premium:focus {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(99, 102, 241, 0.5);
+      outline: none;
+      box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2), 0 0 20px rgba(99, 102, 241, 0.1);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+      filter: blur(8px);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float-delayed {
+      animation: float 7s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+
+    .mask-radial-faded {
+      mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 100%);
+    }
+
+    /* Chat Widget Styles */
+    .chat-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+    }
+
+    .chat-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0066cc, #003d7a);
+      box-shadow: 0 4px 20px rgba(0, 102, 204, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .chat-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(0, 102, 204, 0.6);
+    }
+
+    .chat-button .pulse-ring {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 2px solid #0066cc;
+      border-radius: 50%;
+      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .chat-box {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 360px;
+      max-width: calc(100vw - 48px);
+      background: #0f172a;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: none;
+      flex-direction: column;
+      max-height: 600px;
+      overflow: hidden;
+    }
+
+    .chat-box.active {
+      display: flex;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #0066cc, #003d7a);
+      padding: 16px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 24px;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+
+    .chat-close:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .chat-body {
+      padding: 20px;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .chat-input-group {
+      margin-bottom: 16px;
+    }
+
+    .chat-input-group label {
+      display: block;
+      color: #cbd5e1;
+      font-size: 13px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .chat-input-group input,
+    .chat-input-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: white;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .chat-input-group input:focus,
+    .chat-input-group textarea:focus {
+      outline: none;
+      border-color: #0066cc;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .chat-input-group textarea {
+      resize: vertical;
+      min-height: 80px;
+      font-family: inherit;
+    }
+
+    .chat-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #0066cc, #003d7a);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 102, 204, 0.3);
+    }
+
+    .chat-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 102, 204, 0.5);
+    }
+
+    .chat-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .chat-success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+
+    .chat-success.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* ========================================
+       PREMIUM 3D EFFECTS - OPTION 1 PACKAGE
+       ======================================== */
+
+    /* 1. 3D CARD TILT EFFECT */
+    .card-3d-tilt {
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .card-3d-tilt:hover {
+      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale3d(1.02, 1.02, 1.02);
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(99, 102, 241, 0.2);
+    }
+
+    /* 2. ENHANCED GLASSMORPHISM */
+    .glass-enhanced {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6));
+      backdrop-filter: blur(20px) saturate(200%);
+      -webkit-backdrop-filter: blur(20px) saturate(200%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow:
+        0 8px 32px 0 rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    /* 3. FLOATING ANIMATION */
+    @keyframes float-gentle {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .float-animation {
+      animation: float-gentle 6s ease-in-out infinite;
+    }
+
+    /* 4. PARALLAX ELEMENTS */
+    .parallax-slow {
+      transition: transform 0.3s ease-out;
+    }
+
+    /* 5. MAGNETIC BUTTON EFFECT */
+    .magnetic-button {
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+    }
+
+    .magnetic-button:hover {
+      transform: scale(1.05);
+    }
+
+    /* 6. ANIMATED GRADIENT BORDER */
+    @keyframes rotate-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animated-border {
+      position: relative;
+      background: linear-gradient(90deg,
+          rgba(99, 102, 241, 0.1),
+          rgba(168, 85, 247, 0.1),
+          rgba(99, 102, 241, 0.1));
+      background-size: 200% 200%;
+      animation: rotate-gradient 3s ease infinite;
+    }
+
+    .animated-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(90deg,
+          rgba(99, 102, 241, 0.5),
+          rgba(168, 85, 247, 0.5),
+          rgba(99, 102, 241, 0.5));
+      background-size: 200% 200%;
+      animation: rotate-gradient 3s ease infinite;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .animated-border:hover::before {
+      opacity: 1;
+    }
+
+    /* 7. SHIMMER/SHINE EFFECT */
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .shimmer-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-effect::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      animation: shimmer 3s infinite;
+    }
+
+    .shimmer-effect:hover::before {
+      animation: shimmer 1.5s infinite;
+    }
+
+    /* 8. DEPTH SHADOWS (LAYERED) */
+    .depth-shadow {
+      box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.08),
+        0 2px 2px rgba(0, 0, 0, 0.08),
+        0 4px 4px rgba(0, 0, 0, 0.08),
+        0 8px 8px rgba(0, 0, 0, 0.08),
+        0 16px 16px rgba(0, 0, 0, 0.08);
+      transition: box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .depth-shadow:hover {
+      box-shadow:
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1),
+        0 32px 32px rgba(0, 0, 0, 0.1),
+        0 0 40px rgba(99, 102, 241, 0.3);
+    }
+
+    /* 9. 3D BUTTON PRESS EFFECT */
+    .button-3d {
+      transform: translateZ(0);
+      transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .button-3d:hover {
+      transform: translateY(-2px) translateZ(0);
+      box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(99, 102, 241, 0.5);
+    }
+
+    .button-3d:active {
+      transform: translateY(1px) scale(0.98) translateZ(0);
+      box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 10px rgba(99, 102, 241, 0.2);
+    }
+
+    /* 10. ENHANCED SCROLL REVEAL */
+    .reveal-enhanced {
+      opacity: 0;
+      transform: translateY(50px) scale(0.95) rotateX(10deg);
+      filter: blur(10px);
+      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal-enhanced.active {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotateX(0deg);
+      filter: blur(0);
+    }
+
+    /* BONUS: Glow effect for certification badges */
+    .certification-glow {
+      position: relative;
+    }
+
+    .certification-glow::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0));
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      filter: blur(10px);
+    }
+
+    .certification-glow:hover::after {
+      opacity: 1;
+    }
+
+    /* BONUS: Smooth color transitions */
+    * {
+      transition-property: color, background-color, border-color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+    }
+
+    /* ========================================
+       BUNDLE 3: COMPLETE PREMIUM 3D MOTIONS
+       ======================================== */
+
+    /* 1. 3D PARALLAX MOUSE TRACKING */
+    .parallax-container {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .parallax-layer-1 {
+      transform: translateZ(30px);
+    }
+
+    .parallax-layer-2 {
+      transform: translateZ(60px);
+    }
+
+    .parallax-layer-3 {
+      transform: translateZ(90px);
+    }
+
+    /* 2. STAGGERED CARD ENTRANCE */
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .stagger-item.stagger-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* 3. MORPHING GRADIENT BACKGROUND */
+    @keyframes gradient-morph {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .morphing-bg {
+      background: linear-gradient(-45deg,
+          rgba(3, 7, 18, 1),
+          rgba(15, 23, 42, 1),
+          rgba(30, 41, 59, 1),
+          rgba(15, 23, 42, 1));
+      background-size: 400% 400%;
+      animation: gradient-morph 15s ease infinite;
+    }
+
+    /* 4. 3D FLIP CARD */
+    .flip-card {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 5. SMOOTH SCROLL */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html.smooth-scroll {
+      scroll-behavior: auto;
+    }
+
+    /* 6. CURSOR TRAIL */
+    .cursor-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(168, 85, 247, 0.6));
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+
+    .cursor-dot.active {
+      transform: scale(2);
+    }
+
+    /* 7. 3D LAYERED HERO */
+    .hero-3d-layer {
+      transform-style: preserve-3d;
+    }
+
+    .hero-3d-layer>* {
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* 8. MICROINTERACTIONS */
+    .micro-bounce:hover {
+      animation: micro-bounce 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    @keyframes micro-bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .micro-rotate:hover {
+      animation: micro-rotate 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    @keyframes micro-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-5deg);
+      }
+
+      75% {
+        transform: rotate(5deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .micro-pulse:hover {
+      animation: micro-pulse 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    @keyframes micro-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    /* 9. 3D SECTION TRANSITIONS */
+    .section-3d {
+      transform-style: preserve-3d;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .section-3d.in-view {
+      transform: translateZ(0) rotateX(0deg);
+      opacity: 1;
+    }
+
+    .section-3d:not(.in-view) {
+      transform: translateZ(-100px) rotateX(-5deg);
+      opacity: 0.3;
+    }
+
+    /* 10. LIQUID/BLOB ANIMATIONS */
+    @keyframes blob-float {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+
+      25% {
+        transform: translate(20px, -20px) scale(1.1) rotate(90deg);
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+      }
+
+      50% {
+        transform: translate(-20px, 20px) scale(0.9) rotate(180deg);
+        border-radius: 40% 60% 60% 40% / 70% 30% 50% 60%;
+      }
+
+      75% {
+        transform: translate(20px, 20px) scale(1.05) rotate(270deg);
+        border-radius: 70% 30% 50% 50% / 30% 70% 60% 40%;
+      }
+    }
+
+    .blob {
+      position: absolute;
+      filter: blur(40px);
+      opacity: 0.3;
+      animation: blob-float 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .blob-1 {
+      top: 20%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4));
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      top: 60%;
+      right: 10%;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(99, 102, 241, 0.3));
+      animation-delay: 5s;
+    }
+
+    .blob-3 {
+      bottom: 10%;
+      left: 30%;
+      width: 350px;
+      height: 350px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
+      animation-delay: 10s;
+    }
+
+    /* SMOOTH MOMENTUM SCROLL */
+    .smooth-scroll-container {
+      overflow: hidden;
+    }
+
+    /* ENHANCED CURSOR INTERACTION */
+    /* Disabled - using normal cursor instead */
+    /* body {
+      cursor: none;
+    } */
+
+    .cursor-follower {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(99, 102, 241, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+      mix-blend-mode: difference;
+    }
+
+    .cursor-follower.cursor-hover {
+      width: 60px;
+      height: 60px;
+      border-color: rgba(168, 85, 247, 0.8);
+    }
+
+    /* ========================================
+       PREMIUM FEEL PACKAGE - USER-FOCUSED
+       ======================================== */
+
+    /* 1. GLOWING PULSE ON CTA BUTTONS */
+    @keyframes cta-glow-pulse {
+
+      0%,
+      100% {
+        box-shadow:
+          0 0 0 0 rgba(255, 255, 255, 0.4),
+          0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 15px rgba(255, 255, 255, 0),
+          0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .cta-pulse {
+      animation: cta-glow-pulse 2s ease-in-out infinite;
+    }
+
+    /* 2. BREATHING CERTIFICATION BADGES */
+    @keyframes badge-breathe {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+      }
+    }
+
+    .badge-breathe {
+      animation: badge-breathe 3s ease-in-out infinite;
+    }
+
+    /* 3. FLOATING FINANCE ICONS */
+    @keyframes float-icon-1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(20px, -20px) rotate(5deg);
+      }
+
+      66% {
+        transform: translate(-15px, 15px) rotate(-5deg);
+      }
+    }
+
+    @keyframes float-icon-2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(-25px, 20px) rotate(-7deg);
+      }
+
+      66% {
+        transform: translate(18px, -18px) rotate(7deg);
+      }
+    }
+
+    @keyframes float-icon-3 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(15px, 25px) rotate(10deg);
+      }
+
+      66% {
+        transform: translate(-20px, -15px) rotate(-10deg);
+      }
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 40px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-icon-1 {
+      animation: float-icon-1 15s ease-in-out infinite;
+      top: 15%;
+      left: 10%;
+    }
+
+    .floating-icon-2 {
+      animation: float-icon-2 18s ease-in-out infinite;
+      top: 40%;
+      right: 15%;
+    }
+
+    .floating-icon-3 {
+      animation: float-icon-3 20s ease-in-out infinite;
+      bottom: 25%;
+      left: 20%;
+    }
+
+    .floating-icon-4 {
+      animation: float-icon-1 22s ease-in-out infinite;
+      top: 60%;
+      right: 8%;
+      animation-delay: 2s;
+    }
+
+    .floating-icon-5 {
+      animation: float-icon-2 17s ease-in-out infinite;
+      top: 80%;
+      left: 50%;
+      animation-delay: 4s;
+    }
+
+    /* 4. SCROLL PROGRESS BAR */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    }
+
+    /* 5. ANIMATED COUNTER */
+    .counter-number {
+      font-weight: bold;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ========================================
+       MOBILE OPTIMIZATIONS
+       ======================================== */
+
+    @media (max-width: 768px) {
+
+      /* Reduce animation intensity on mobile */
+      .card-3d-tilt:hover {
+        transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale3d(1.01, 1.01, 1.01);
+      }
+
+      /* Smaller floating icons on mobile */
+      .floating-icon {
+        font-size: 24px;
+        opacity: 0.1;
+      }
+
+      /* Reduce blob size on mobile */
+      .blob-1,
+      .blob-2,
+      .blob-3 {
+        width: 200px;
+        height: 200px;
+        filter: blur(30px);
+      }
+
+      /* Disable parallax mouse tracking on mobile (no mouse) */
+      .parallax-container {
+        transform: none !important;
+      }
+
+      /* Reduce parallax depth */
+      .parallax-layer-1,
+      .parallax-layer-2,
+      .parallax-layer-3 {
+        transform: translateZ(0);
+      }
+
+      /* Simpler shadows on mobile for performance */
+      .depth-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .depth-shadow:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Reduce shimmer complexity on mobile */
+      .shimmer-effect::before {
+        display: none;
+      }
+
+      /* Smoother animations on mobile */
+      .stagger-item {
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      /* CTA pulse - slightly smaller radius on mobile */
+      @keyframes cta-glow-pulse {
+
+        0%,
+        100% {
+          box-shadow:
+            0 0 0 0 rgba(255, 255, 255, 0.4),
+            0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        50% {
+          box-shadow:
+            0 0 0 10px rgba(255, 255, 255, 0),
+            0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      /* Reduce microinteraction intensity */
+      @keyframes micro-bounce {
+
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-3px);
+        }
+      }
+
+      /* Thinner scroll progress bar on mobile */
+      .scroll-progress {
+        height: 2px;
+      }
+
+      /* Fix text overlap issues on mobile */
+      section {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Ensure headings don't overlap */
+      h1,
+      h2,
+      h3 {
+        position: relative;
+        z-index: 10;
+        margin-bottom: 1rem;
+      }
+
+      /* Fix certification badge overlap on mobile */
+      .border-emerald-500\/20 {
+        position: relative;
+        z-index: 5;
+        margin-top: 1.5rem !important;
+        margin-bottom: 2rem !important;
+        padding-bottom: 1rem;
+      }
+
+      /* Fix for any bordered cards that might overlap */
+      .border {
+        margin-bottom: 2rem !important;
+      }
+
+      /* Specific fix for certification/credential cards */
+      [class*="border-emerald"],
+      [class*="border-green"] {
+        margin-bottom: 2.5rem !important;
+        clear: both;
+      }
+
+      /* Add spacing after any card-like elements */
+      .rounded-lg,
+      .rounded-xl,
+      .rounded-2xl {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Ensure grid items don't overlap */
+      .grid>* {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Ensure proper spacing for text content */
+      p,
+      div {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Fix floating icons z-index */
+      .floating-icon {
+        z-index: 0 !important;
+      }
+
+      /* Ensure blobs stay in background */
+      .blob {
+        z-index: -1 !important;
+      }
+    }
+
+    /* Touch device specific optimizations */
+    @media (hover: none) and (pointer: coarse) {
+
+      /* Disable hover-only effects on touch devices */
+      .card-3d-tilt:hover {
+        transform: none;
+      }
+
+      .magnetic-button:hover {
+        transform: scale(1.02);
+      }
+
+      /* Instant transitions for touch */
+      .button-3d:active {
+        transform: translateY(1px) scale(0.98);
+      }
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .blob,
+      .floating-icon,
+      .cursor-dot {
+        animation: none !important;
+      }
+    }
+
+    /* ========================================
+       SCROLL REVEAL ANIMATIONS
+       Works on both mobile and desktop
+       ======================================== */
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .scroll-reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ========================================
+       TOUCH-FRIENDLY TAP EFFECTS (MOBILE)
+       ======================================== */
+
+    @media (hover: none) and (pointer: coarse) {
+
+      /* Tap ripple effect on cards */
+      .p-7,
+      .p-8,
+      .p-6 {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .p-7:active,
+      .p-8:active,
+      .p-6:active {
+        transform: scale(0.97);
+        transition: transform 0.15s ease;
+      }
+
+      /* Buttons get a subtle press effect */
+      a[href*="google.com/forms"]:active,
+      a[href*="wa.me"]:active,
+      button:active {
+        transform: scale(0.95) !important;
+        transition: transform 0.1s ease !important;
+      }
+
+      /* Make touch targets bigger on mobile */
+      a,
+      button {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* ========================================
+       ANIMATED NUMBER COUNTERS
+       ======================================== */
+    @keyframes count-up {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .counter-animate {
+      animation: count-up 0.6s ease-out forwards;
+    }
+
+    /* ========================================
+       SMOOTH SECTION DIVIDERS
+       ======================================== */
+    section {
+      position: relative;
+    }
+
+    section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+    }
+
+    /* ========================================
+       ABOUT SECTION MOBILE FIX (100px gap)
+       ======================================== */
+    @media (max-width: 1023px) {
+      .lg\\:col-span-4[style*="margin-bottom: 100px"] {
+        margin-bottom: 60px !important;
+      }
+    }
+
+    /* ========================================
+       ULTRA-PREMIUM MOBILE KIT
+       Makes the web app feel like a native app
+       ======================================== */
+
+    html {
+      -webkit-tap-highlight-color: transparent;
+      /* Removes cheap gray tap box */
+    }
+
+    /* Sleek Scrollbar for Mobile */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+
+      /* Deep OLED Black Backgrounds */
+      body,
+      .bg-background {
+        background-color: #000000 !important;
+      }
+
+      /* Richer Glassmorphism for Mobile Cards */
+      .p-7,
+      .p-8,
+      .p-6,
+      .p-5 {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Better Text Readability Outdoors */
+      p.text-slate-400 {
+        color: #94a3b8 !important;
+        /* Slightly lighter gray for contrast */
+        font-weight: 450 !important;
+        /* Micro-bold for sharpness */
+      }
+
+      /* Premium Hero Text */
+      h1 {
+        letter-spacing: -0.02em;
+        text-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      /* Native App Feel for Buttons */
+      button,
+      a.bg-blue-600 {
+        box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39) !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden selection:bg-blue-600/30"
+  style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <div
+    class="fixed top-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse mix-blend-screen">
+  </div>
+  <div class="fixed inset-0 bg-grid-white opacity-20 pointer-events-none -z-10 mask-radial-faded"></div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl safe-top">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="relative w-9 h-9 md:w-11 md:h-11 flex items-center justify-center">
+          <img src="/logo.jpg" alt="Rupeevalcore Logo"
+            class="w-full h-full object-contain rounded-lg group-hover:scale-105 transition-transform duration-300 shadow-lg" />
+        </div>
+        <div class="flex flex-col justify-center">
+          <span class="text-[15px] md:text-base font-bold tracking-tight text-white leading-tight">Rupeevalcore</span>
+          <span class="text-[10px] md:text-xs font-medium text-slate-400 tracking-wide">Finance Education</span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+        <a href="#curriculum" class="hover:text-white transition-colors duration-200">Curriculum</a>
+        <a href="#learning-levels" class="hover:text-white transition-colors duration-200">Learning Levels</a>
+        <a href="#pricing" class="hover:text-white transition-colors duration-200">Learning Options</a>
+        <a href="#about" class="hover:text-white transition-colors duration-200">About Us</a>
+        <a href="#contact" class="hover:text-white transition-colors duration-200">Contact</a>
+      </div>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
+        target="_blank" rel="noopener noreferrer"
+        class="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.08] border border-white/10 text-xs font-semibold text-white hover:bg-white/[0.12] transition-all hover:border-white/20 group">
+        Register Interest
+        <iconify-icon icon="solar:arrow-right-linear" width="16"
+          class="group-hover:translate-x-0.5 transition-transform" stroke-width="2"></iconify-icon>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+        class="md:hidden flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="20" class="text-white"></iconify-icon>
+      </button>
+    </div>
+
+    <div id="mobile-menu"
+      class="hidden absolute top-16 md:top-20 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-white/10 p-6 md:hidden z-40">
+      <div class="flex flex-col gap-6 text-sm text-slate-400">
+        <a href="#curriculum" class="hover:text-white">Curriculum</a>
+        <a href="#learning-levels" class="hover:text-white">Learning Levels</a>
+        <a href="#pricing" class="hover:text-white">Learning Options</a>
+        <a href="#about" class="hover:text-white">About Us</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
+          target="_blank" rel="noopener noreferrer" class="text-blue-500 font-semibold">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="lg:pt-48 lg:pb-32 overflow-hidden pt-32 pb-20 relative perspective-container">
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-800/15 rounded-full blur-[130px] -z-10 opacity-50 pointers-none mix-blend-screen animate-pulse">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[130px] -z-10 pointer-events-none opacity-40 mix-blend-screen">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8 animate-fade-in-up">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20 text-[11px] tracking-wide uppercase text-blue-300 font-medium shadow-[0_0_20px_rgba(0,102,204,0.2)] ring-1 ring-blue-600/30">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+          </span>
+          Workshops in Chennai &amp; Online
+        </div>
+
+        <h1 class="lg:text-7xl leading-[1.05] text-gradient text-5xl font-semibold tracking-tight drop-shadow-2xl">
+          Financial Education Made Accessible
+        </h1>
+
+        <h2 class="text-2xl lg:text-3xl font-medium text-white/90 tracking-tight">
+          Finance Made Simple. Life Made Smarter.
+        </h2>
+
+        <p class="leading-relaxed text-lg text-slate-400 max-w-xl">
+          Practical workshops on money basics, stock market fundamentals, tax and insurance awareness — designed for
+          beginners, with optional intermediate and advanced sessions.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
+            target="_blank" rel="noopener noreferrer"
+            class="text-background hover:bg-slate-200 transition-colors shadow-white/5 text-sm font-semibold text-center bg-white rounded-lg pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">
+            Register for Workshop
+          </a>
+          <a href="https://wa.me/918248589694" target="_blank" rel="noopener noreferrer"
+            class="px-8 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors text-center backdrop-blur-sm">
+            WhatsApp Us
+          </a>
+          <a href="#curriculum"
+            class="px-8 py-3.5 rounded-lg bg-transparent border border-white/20 text-white text-sm font-medium hover:bg-white/5 transition-colors text-center backdrop-blur-sm">
+            Learn more
+          </a>
+        </div>
+
+        <!-- Hidden note (info icon) -->
+        <div class="pt-1 max-w-xl">
+          <button type="button"
+            class="inline-flex items-center gap-2 text-xs font-medium text-slate-400 hover:text-white transition-colors"
+            onclick="toggleAccordion('hero-note','accordion-global')" aria-controls="hero-note" aria-expanded="false">
+            <span
+              class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/[0.04] border border-white/10">
+              <iconify-icon icon="solar:info-circle-linear" width="16" class="text-slate-300"
+                stroke-width="1.5"></iconify-icon>
+            </span>
+            Learn more
+            <iconify-icon icon="solar:alt-arrow-down-linear" width="14" class="text-slate-500"
+              stroke-width="1.5"></iconify-icon>
+          </button>
+
+          <div id="hero-note" class="hidden mt-3 rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <p class="text-sm text-slate-400 leading-relaxed">
+              These workshops focus on financial awareness and education only. No investment advice, stock tips, or
+              recommendations are provided.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-2 flex flex-wrap gap-3 text-xs text-slate-400">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/[0.03] border border-white/10 px-3 py-1.5">
+            <iconify-icon icon="solar:map-point-linear" width="16" class="text-slate-300"
+              stroke-width="1.5"></iconify-icon>
+            Chennai, Tamil Nadu
+          </div>
+          <a href="tel:+918248589694"
+            class="inline-flex items-center gap-2 rounded-full bg-white/[0.03] border border-white/10 px-3 py-1.5 hover:bg-white/[0.05] transition-colors">
+            <iconify-icon icon="solar:phone-linear" width="16" class="text-slate-300" stroke-width="1.5"></iconify-icon>
+            +91 8248589694
+          </a>
+          <a href="mailto:contactrupeevalcore@gmail.com"
+            class="inline-flex items-center gap-2 rounded-full bg-white/[0.03] border border-white/10 px-3 py-1.5 hover:bg-white/[0.05] transition-colors">
+            <iconify-icon icon="solar:letter-linear" width="16" class="text-slate-300"
+              stroke-width="1.5"></iconify-icon>
+            contactrupeevalcore@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="relative hidden lg:block h-[500px] w-full animate-float">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="w-[520px] h-[360px] bg-slate-900 border border-white/10 rounded-xl hero-tilt relative z-10 overflow-hidden shadow-2xl">
+            <div class="h-9 border-b border-white/10 flex items-center px-4 gap-2 bg-slate-800/50 backdrop-blur-md">
+              <div class="w-2.5 h-2.5 rounded-full bg-rose-500/20"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-500/20"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/20"></div>
+            </div>
+            <div class="p-6 grid grid-cols-3 gap-5 h-full bg-slate-950/50">
+              <div class="col-span-2 space-y-5">
+                <!-- Stock Market Chart -->
+                <div
+                  class="h-28 rounded-lg bg-gradient-to-br from-emerald-500/10 to-blue-600/10 border border-emerald-500/20 p-3 relative overflow-hidden">
+                  <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mb-1">Portfolio Growth
+                  </div>
+                  <div class="flex items-baseline gap-2">
+                    <div class="text-2xl font-bold text-white">₹<span class="animate-counter"
+                        data-target="145000">1,45,000</span></div>
+                    <div class="text-xs text-emerald-400 font-semibold">+12.5%</div>
+                  </div>
+                  <!-- Mini Chart -->
+                  <svg class="absolute bottom-0 right-0 w-32 h-16 opacity-40" viewBox="0 0 100 40" fill="none">
+                    <path d="M0,35 L20,28 L40,18 L60,22 L80,10 L100,5" stroke="rgb(16,185,129)" stroke-width="2"
+                      fill="none" />
+                    <path d="M0,35 L20,28 L40,18 L60,22 L80,10 L100,5 L100,40 L0,40 Z" fill="url(#grad)"
+                      opacity="0.3" />
+                    <defs>
+                      <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(16,185,129);stop-opacity:0.4" />
+                        <stop offset="100%" style="stop-color:rgb(16,185,129);stop-opacity:0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+
+                <!-- Topic Title -->
+                <div class="h-8 rounded-lg bg-white/5 px-3 flex items-center">
+                  <div class="text-xs text-slate-300 font-medium">Understanding Stock Market Basics</div>
+                </div>
+
+                <!-- Learning Progress -->
+                <div class="space-y-2.5">
+                  <div class="flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Learning Progress</span>
+                    <span><span class="animate-counter" data-target="65">65</span>%</span>
+                  </div>
+                  <div class="h-2 rounded-full bg-white/5 w-full overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-blue-600 to-blue-500 w-2/3"></div>
+                  </div>
+                  <div class="h-2 rounded-full bg-white/5 w-5/6 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 w-1/2"></div>
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-3 mt-4">
+                  <div
+                    class="h-10 w-24 rounded-md bg-blue-600/20 border border-blue-600/30 flex items-center justify-center text-[10px] text-blue-300 font-semibold">
+                    Start Course</div>
+                  <div
+                    class="h-10 w-24 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-[10px] text-slate-400 font-medium">
+                    Q&A Forum</div>
+                </div>
+              </div>
+
+              <div class="col-span-1 space-y-5">
+                <!-- Savings Goal Card -->
+                <div
+                  class="h-32 rounded-lg bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 p-3">
+                  <iconify-icon icon="solar:piggy-bank-linear" class="text-amber-400" width="20"
+                    stroke-width="1.5"></iconify-icon>
+                  <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-2">Savings Goal</div>
+                  <div class="text-lg font-bold text-white mt-1">₹50,000</div>
+                  <div class="text-[9px] text-slate-400 mt-1">Emergency Fund</div>
+                  <div class="mt-2 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full rounded-full bg-amber-500 w-3/4"></div>
+                  </div>
+                </div>
+
+                <!-- Topic Cards -->
+                <div class="h-12 rounded-lg bg-white/5 border border-white/10 p-2 flex items-center gap-2">
+                  <iconify-icon icon="solar:document-text-linear" class="text-blue-400" width="16"
+                    stroke-width="1.5"></iconify-icon>
+                  <div class="text-[10px] text-slate-300 font-medium">Tax Basics</div>
+                </div>
+
+                <div class="h-12 rounded-lg bg-white/5 border border-white/10 p-2 flex items-center gap-2">
+                  <iconify-icon icon="solar:shield-check-linear" class="text-emerald-400" width="16"
+                    stroke-width="1.5"></iconify-icon>
+                  <div class="text-[10px] text-slate-300 font-medium">Insurance 101</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none"></div>
+
+            <div
+              class="absolute -right-12 top-10 p-4 rounded-xl bg-slate-900/90 border border-white/10 backdrop-blur-md shadow-2xl animate-float-delayed"
+              style="transform: translateZ(50px)">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/20">
+                  <iconify-icon icon="solar:diploma-linear" class="text-emerald-400" width="20"
+                    stroke-width="1.5"></iconify-icon>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Workshop Style</div>
+                  <div class="text-base font-semibold text-white">Interactive</div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute -left-8 bottom-16 p-4 rounded-xl bg-slate-900/90 border border-white/10 backdrop-blur-md shadow-2xl animate-float"
+              style="transform: translateZ(30px)">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center border border-blue-600/20">
+                  <iconify-icon icon="solar:wallet-money-linear" class="text-blue-500" width="20"
+                    stroke-width="1.5"></iconify-icon>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Topics Covered</div>
+                  <div class="text-sm font-semibold text-white"><span class="animate-counter" data-target="6">6</span>+
+                    Modules</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute w-[480px] h-[320px] bg-slate-800/20 border border-white/5 rounded-xl hero-tilt -z-10 translate-x-10 translate-y-10 blur-[2px]">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="py-24 border-t border-white/5 bg-background relative">
+    <div
+      class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] -translate-y-1/2 -z-10 pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16 items-start reveal">
+        <div class="lg:col-span-4 lg:sticky lg:top-24 w-full relative z-20" style="margin-bottom: 100px;">
+          <h2 class="text-3xl font-semibold tracking-tight mb-5 text-white">About Rupeevalcore</h2>
+          <p class="text-slate-400 leading-relaxed text-sm mb-6">
+            Rupeevalcore delivers hands-on finance education through structured workshops that simplify everyday money
+            concepts.
+          </p>
+
+          <!-- NISM Certification Badge -->
+          <div
+            class="flex w-full flex-col p-5 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 transition-all shadow-lg shadow-emerald-900/10"
+            style="margin-bottom: 0 !important; display: flex !important;">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0">
+                <iconify-icon icon="solar:diploma-verified-bold" width="20" class="text-emerald-400"
+                  stroke-width="1.5"></iconify-icon>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">Certified Instructor</div>
+                <div class="text-sm font-bold text-white">NISM Series XII Certified</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Securities Markets · SEBI-backed certification
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:book-2-linear" width="20" class="text-blue-500"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Beginner-first</h3>
+            <p class="text-sm text-slate-400">Simple explanations with clear structure, examples, and Q&amp;A.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:shield-warning-linear" width="20" class="text-purple-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Education only</h3>
+            <p class="text-sm text-slate-400">Awareness-focused sessions with SEBI-safe wording and no
+              recommendations.
+            </p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:chat-round-linear" width="20" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Interactive</h3>
+            <p class="text-sm text-slate-400">Hands-on explanations and space to ask questions without pressure.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:check-read-linear" width="20" class="text-amber-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Transparent</h3>
+            <p class="text-sm text-slate-400">Clear scope: literacy and awareness—not advisory services.</p>
+          </div>
+
+          <div
+            class="p-5 md:p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 md:mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:verified-check-linear" width="20" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">NISM Series-XII Certified</h3>
+            <p class="text-sm text-slate-400">Trainer holds NISM-Series-XII: Securities Markets Foundation
+              certification—conducted by NISM, an educational institution established by SEBI to promote securities
+              market education standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOP CURRICULUM (CORE) -->
+  <section id="curriculum" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center reveal">
+        <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Workshop Curriculum</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">Comprehensive financial education covering everyday money
+          management, investments, and practical awareness.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal" data-accordion-group="curriculum">
+        <div class="group p-8 gradient-border card-3d">
+          <div
+            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition-colors">
+            <iconify-icon icon="solar:wallet-linear" width="20" class="text-white" stroke-width="1.5"></iconify-icon>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium text-white">Personal Finance Basics</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Understand essential money concepts used in everyday life
+            </p>
+            <button type="button"
+              class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+              onclick="toggleAccordion('cur-1','curriculum')" aria-controls="cur-1" aria-expanded="false">
+              View Topics
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-400"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="cur-1" class="hidden mt-4">
+            <ul class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <li class="flex gap-2"><span>•</span><span>Income, expenses, and savings</span></li>
+              <li class="flex gap-2"><span>•</span><span>Needs vs wants</span></li>
+              <li class="flex gap-2"><span>•</span><span>Inflation and its impact on money</span></li>
+              <li class="flex gap-2"><span>•</span><span>Power of compounding (simple explanation)</span></li>
+              <li class="flex gap-2"><span>•</span><span>Common money mistakes</span></li>
+            </ul>
+            <div class="mt-4 rounded-lg border border-white/10 bg-white/[0.02] p-3 text-xs text-slate-400">
+              This section focuses on basic understanding of personal finance concepts for everyday use.
+            </div>
+          </div>
+        </div>
+
+        <div class="group p-8 gradient-border card-3d">
+          <div
+            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition-colors">
+            <iconify-icon icon="solar:hand-money-linear" width="20" class="text-white"
+              stroke-width="1.5"></iconify-icon>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium text-white">Money Management Basics</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Manage monthly income and expenses practically</p>
+            <button type="button"
+              class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+              onclick="toggleAccordion('cur-2','curriculum')" aria-controls="cur-2" aria-expanded="false">
+              View Topics
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-400"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="cur-2" class="hidden mt-4">
+            <ul class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <li class="flex gap-2"><span>•</span><span>Budgeting concept (high-level)</span></li>
+              <li class="flex gap-2"><span>•</span><span>Expense awareness</span></li>
+              <li class="flex gap-2"><span>•</span><span>Managing cash flow</span></li>
+              <li class="flex gap-2"><span>•</span><span>Building healthy money habits</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="group p-8 gradient-border card-3d">
+          <div
+            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition-colors">
+            <iconify-icon icon="solar:chart-2-linear" width="20" class="text-white" stroke-width="1.5"></iconify-icon>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium text-white">Stock Market Fundamentals</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Learn what the stock market is and why it exists</p>
+            <button type="button"
+              class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+              onclick="toggleAccordion('cur-3','curriculum')" aria-controls="cur-3" aria-expanded="false">
+              View Topics
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-400"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="cur-3" class="hidden mt-4">
+            <ul class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <li class="flex gap-2"><span>•</span><span>What the stock market is</span></li>
+              <li class="flex gap-2"><span>•</span><span>Why companies raise money</span></li>
+              <li class="flex gap-2"><span>•</span><span>Investing vs trading (overview only)</span></li>
+              <li class="flex gap-2"><span>•</span><span>Shares, indices, mutual funds (intro)</span></li>
+            </ul>
+            <div class="mt-4 rounded-lg border border-rose-500/20 bg-rose-500/5 p-3 text-xs text-slate-300">
+              This is an awareness session only. No trading strategies, stock tips, or recommendations are discussed.
+            </div>
+          </div>
+        </div>
+
+        <div class="group p-8 gradient-border card-3d">
+          <div
+            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition-colors">
+            <iconify-icon icon="solar:layers-linear" width="20" class="text-white" stroke-width="1.5"></iconify-icon>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium text-white">Mutual Funds (Introduction)</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Understand what mutual funds are</p>
+            <button type="button"
+              class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+              onclick="toggleAccordion('cur-4','curriculum')" aria-controls="cur-4" aria-expanded="false">
+              View Topics
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-400"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="cur-4" class="hidden mt-4">
+            <ul class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <li class="flex gap-2"><span>•</span><span>What mutual funds are</span></li>
+              <li class="flex gap-2"><span>•</span><span>SIP (Systematic Investment Plan) – concept only</span></li>
+              <li class="flex gap-2"><span>•</span><span>Index funds explained simply</span></li>
+              <li class="flex gap-2"><span>•</span><span>ETFs explained at a high level</span></li>
+              <li class="flex gap-2"><span>•</span><span>Index funds vs ETFs (conceptual difference)</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="group p-8 gradient-border card-3d">
+          <div
+            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition-colors">
+            <iconify-icon icon="solar:shield-linear" width="20" class="text-white" stroke-width="1.5"></iconify-icon>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium text-white">Insurance Basics</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Learn why insurance is important for financial protection
+            </p>
+            <button type="button"
+              class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+              onclick="toggleAccordion('cur-5','curriculum')" aria-controls="cur-5" aria-expanded="false">
+              View Topics
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-400"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="cur-5" class="hidden mt-4">
+            <ul class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <li class="flex gap-2"><span>•</span><span>Why insurance exists</span></li>
+              <li class="flex gap-2"><span>•</span><span>Life vs health insurance (basics)</span></li>
+              <li class="flex gap-2"><span>•</span><span>Risk protection concept</span></li>
+              <li class="flex gap-2"><span>•</span><span>Common misconceptions</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="group p-8 gradient-border card-3d">
+          <div
+            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition-colors">
+            <iconify-icon icon="solar:document-text-linear" width="20" class="text-white"
+              stroke-width="1.5"></iconify-icon>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium text-white">Tax Awareness (Basics Only)</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Understand why tax awareness matters</p>
+            <button type="button"
+              class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+              onclick="toggleAccordion('cur-6','curriculum')" aria-controls="cur-6" aria-expanded="false">
+              View Topics
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-400"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="cur-6" class="hidden mt-4">
+            <ul class="space-y-2 text-sm text-slate-300 leading-relaxed">
+              <li class="flex gap-2"><span>•</span><span>Why taxes are paid</span></li>
+              <li class="flex gap-2"><span>•</span><span>Basic tax terminology</span></li>
+              <li class="flex gap-2"><span>•</span><span>Importance of compliance</span></li>
+              <li class="flex gap-2"><span>•</span><span>Common tax myths</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING LEVELS -->
+  <section id="learning-levels" class="py-24 border-t border-white/5 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center reveal">
+        <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Learning Levels</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">Everyone starts at beginner level. Progress to intermediate and
+          advanced at your own pace.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal" data-accordion-group="levels">
+        <div class="p-8 rounded-2xl border border-blue-600/30 bg-blue-600/5 hover:border-blue-600/40 transition-all">
+          <div class="mb-4">
+            <h3 class="text-lg font-medium text-white">Beginner</h3>
+            <p class="text-sm text-slate-400 mt-1">Default level for everyone. No prior knowledge needed.</p>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Start from zero financial knowledge</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Practical examples and simple language</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Safe and judgment-free environment</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Interactive Q&A sessions</span>
+            </li>
+          </ul>
+          <a href="#register"
+            class="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-white transition-colors mt-4">
+            More details
+            <iconify-icon icon="solar:arrow-right-linear" width="14" stroke-width="1.5"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-white/10 transition-all">
+          <div class="mb-4">
+            <h3 class="text-lg font-medium text-white">Intermediate</h3>
+            <p class="text-sm text-slate-400 mt-1">For those who know basics and want to go deeper (Optional).</p>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Deeper understanding of financial concepts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Portfolio diversification awareness</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Understanding market dynamics</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Building on foundational knowledge</span>
+            </li>
+          </ul>
+          <a href="#register"
+            class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors mt-4">
+            More details
+            <iconify-icon icon="solar:arrow-right-linear" width="14" stroke-width="1.5"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:border-white/10 transition-all">
+          <div class="mb-4">
+            <h3 class="text-lg font-medium text-white">Advanced</h3>
+            <p class="text-sm text-slate-400 mt-1">Complex topics for experienced learners (Custom).</p>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Advanced financial concepts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>In-depth market awareness</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Complex financial structures</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-slate-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Tailored learning programs</span>
+            </li>
+          </ul>
+          <a href="#register"
+            class="inline-flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors mt-4">
+            More details
+            <iconify-icon icon="solar:arrow-right-linear" width="14" stroke-width="1.5"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="py-24 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12 text-center reveal">
+        <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Who This Is For</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">Understanding who benefits most from financial education.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto reveal">
+        <div class="p-8 rounded-2xl border border-white/10 bg-white/[0.02]">
+          <h3 class="text-lg font-medium text-white mb-4">This workshop is for:</h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+              Students
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+              Working professionals
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+              Families
+            </li>
+            <li class="flex items-center gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="16" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+              Anyone confused about money basics
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING FORMATS -->
+  <section id="pricing" class="py-24 border-t border-white/5 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center reveal">
+        <h2 class="text-4xl font-bold tracking-tight mb-4 text-white">Learning Formats</h2>
+        <p class="text-slate-400">Choose the format that works best for you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto reveal">
+        <!-- Group Sessions Card -->
+        <div
+          class="p-8 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-blue-500/50 hover:bg-white/[0.04] transition-all shadow-lg">
+          <!-- Tags -->
+          <div class="flex gap-2 mb-6">
+            <span
+              class="px-3 py-1 rounded-md bg-blue-600/10 border border-blue-600/20 text-xs font-medium text-blue-400 uppercase tracking-wide">College
+              Events</span>
+            <span
+              class="px-3 py-1 rounded-md bg-blue-600/10 border border-blue-600/20 text-xs font-medium text-blue-400 uppercase tracking-wide">Corporate
+              Events</span>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-2">Group Sessions</h3>
+            <p class="text-sm text-slate-400">Perfect for colleges & corporates</p>
+          </div>
+
+          <ul class="space-y-3 text-sm text-slate-300 mb-8">
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Interactive workshops for groups of <span class="animate-counter" data-target="10">10</span> or more
+                participants</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Available both online and offline (in-person)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Customizable topics based on audience requirements</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-500 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Q&A sessions and practical examples included</span>
+            </li>
+          </ul>
+
+          <div class="mb-6">
+            <div class="text-xs text-slate-500 mb-1">Starting from</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl font-bold text-blue-400">₹<span class="animate-counter" data-target="499"
+                  data-duration="1200">499</span>.00</span>
+              <span class="text-sm text-slate-400">/ participant</span>
+            </div>
+          </div>
+
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
+            target="_blank" rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-sm font-semibold transition-colors shadow-lg shadow-blue-600/20">
+            Book Group Session
+            <iconify-icon icon="solar:arrow-right-linear" width="16" stroke-width="1.5"></iconify-icon>
+          </a>
+        </div>
+
+        <!-- One-to-One Sessions Card -->
+        <div
+          class="p-5 md:p-8 rounded-2xl border-2 border-blue-500/40 bg-gradient-to-br from-blue-500/10 to-blue-600/5 hover:border-blue-500/60 transition-all shadow-lg shadow-blue-500/10 relative mt-4 md:mt-0">
+          <!-- Premium Badge -->
+          <div class="absolute -top-3 right-4 md:top-6 md:right-6">
+            <span
+              class="px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] md:text-xs font-bold uppercase tracking-wide flex items-center gap-1 shadow-lg border border-blue-400/50">
+              <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
+              Premium
+            </span>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex gap-2 mb-6">
+            <span
+              class="px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-medium text-blue-300 uppercase tracking-wide">Individuals</span>
+            <span
+              class="px-3 py-1 rounded-md bg-blue-600/20 border border-blue-500/30 text-xs font-medium text-blue-300 uppercase tracking-wide">Families</span>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-2">One-to-One Sessions</h3>
+            <p class="text-sm text-slate-300">Personalized learning experience</p>
+          </div>
+
+          <!-- Custom Section -->
+          <div class="mb-6 pb-6 border-b border-white/10">
+            <h4 class="text-lg font-bold text-white mb-1">Custom</h4>
+            <p class="text-sm text-slate-400">Based on your requirements</p>
+          </div>
+
+          <ul class="space-y-3 text-sm text-slate-300 mb-8">
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Fully customized based on individual learning goals</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Flexible scheduling at your convenience</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Deep-dive into specific topics of your choice</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:check-circle-linear" width="18" class="text-blue-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Ongoing support and follow-up guidance</span>
+            </li>
+          </ul>
+
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
+            target="_blank" rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600 text-sm font-semibold transition-colors shadow-lg shadow-blue-600/30">
+            Book One-to-One Session
+            <iconify-icon icon="solar:arrow-right-linear" width="16" stroke-width="1.5"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TRUST -->
+  <section class="py-24 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center reveal">
+        <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Why Trust Rupeevalcore</h2>
+        <p class="text-slate-400">Financial literacy focus only. No products, no commissions, no conflicts of interest.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto reveal">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:book-2-linear" width="20" class="text-blue-500"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Beginner-First Approach</h3>
+            <p class="text-sm text-slate-400">Everything explained in simple terms, no jargon, no assumptions about
+              prior knowledge.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:chat-round-linear" width="20" class="text-purple-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Simple Explanations</h3>
+            <p class="text-sm text-slate-400">Complex financial concepts broken down into easy-to-understand language
+              and real-life examples.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:lightbulb-linear" width="20" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Real-Life Examples</h3>
+            <p class="text-sm text-slate-400">Practical scenarios and case studies that make learning relatable and
+              applicable to everyday life.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:shield-warning-linear" width="20" class="text-rose-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">No Investment Advice</h3>
+            <p class="text-sm text-slate-400">We focus purely on education and awareness. No stock tips, no product
+              sales, no hidden agenda.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:diploma-verified-bold" width="20" class="text-emerald-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">NISM Certified Instructors</h3>
+            <p class="text-sm text-slate-400">Our trainers hold NISM Series XII certification (Securities Markets),
+              demonstrating professional competence and commitment to quality financial education.</p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all group md:col-span-2">
+            <div
+              class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="solar:check-read-linear" width="20" class="text-amber-400"
+                stroke-width="1.5"></iconify-icon>
+            </div>
+            <h3 class="text-base font-medium text-white mb-2">Transparent Learning</h3>
+            <p class="text-sm text-slate-400">Clear curriculum, honest communication, and no false promises of
+              guaranteed returns or quick wealth.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- FOUNDER & TEAM -->
+  <section id="about" class="py-24 border-t border-white/5 bg-white/[0.005]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center reveal">
+        <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Founder &amp; Team</h2>
+        <p class="text-slate-400">Dedicated to financial education and awareness.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal" data-accordion-group="team">
+        <div class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-base font-medium text-white">Shanthi Chitrarasu</h3>
+              <p class="text-sm text-slate-400 mt-1">Founder</p>
+            </div>
+            <button type="button"
+              class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.06]"
+              onclick="toggleAccordion('tm-1','team')" aria-controls="tm-1" aria-expanded="false">
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-300"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="tm-1" class="hidden mt-4 text-sm text-slate-300 leading-relaxed">
+            Shanthi founded Rupeevalcore with the objective of improving financial awareness among individuals who have
+            not been exposed to basic money concepts. The workshops are designed to explain financial topics in a
+            simple, structured, and easy-to-understand manner. The focus is on education and awareness only, without
+            providing investment advice or recommendations.
+          </div>
+        </div>
+
+        <div class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-base font-medium text-white">Chitrarasu P</h3>
+              <p class="text-sm text-slate-400 mt-1">Operations &amp; Administration</p>
+            </div>
+            <button type="button"
+              class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.06]"
+              onclick="toggleAccordion('tm-2','team')" aria-controls="tm-2" aria-expanded="false">
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-300"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="tm-2" class="hidden mt-4 text-sm text-slate-300 leading-relaxed">
+            Coordination and operations support for workshops and schedules.
+          </div>
+        </div>
+
+        <div class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-base font-medium text-white">Manikandan C</h3>
+              <p class="text-sm text-slate-400 mt-1">Trainer</p>
+            </div>
+            <button type="button"
+              class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.06]"
+              onclick="toggleAccordion('tm-3','team')" aria-controls="tm-3" aria-expanded="false">
+              <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-300"
+                stroke-width="1.5"></iconify-icon>
+            </button>
+          </div>
+          <div id="tm-3" class="hidden mt-4 text-sm text-slate-300 leading-relaxed">
+            Educational session delivery and facilitation with structured explanations and Q&amp;A.
+
+            <!-- NISM Certification -->
+            <div class="mt-4 p-3 rounded-lg border border-emerald-500/20 bg-emerald-500/5">
+              <div class="flex items-center gap-2 mb-1.5">
+                <iconify-icon icon="solar:diploma-verified-bold" width="16" class="text-emerald-400"
+                  stroke-width="1.5"></iconify-icon>
+                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">NISM Certified</span>
+              </div>
+              <p class="text-xs text-slate-300">
+                <strong class="text-white">NISM Series XII</strong> – Securities Markets<br>
+                <span class="text-slate-400">SEBI-backed certification</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-366px * 5));
+        }
+      }
+
+      @keyframes scroll-left-mobile {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-300px * 5));
+        }
+      }
+
+      #reviewsCarousel:hover {
+        animation-play-state: paused;
+      }
+
+      /* Mobile optimization */
+      @media (max-width: 640px) {
+        #reviewsCarousel>div {
+          min-width: 280px !important;
+        }
+
+        #reviewsCarousel {
+          animation: scroll-left-mobile 45s linear infinite !important;
+        }
+      }
+    </style>
+  </section>
+
+
+
+
+
+  <!-- FINAL CTA -->
+  <section id="register" class="py-24 border-t border-white/5 bg-slate-950 relative overflow-hidden">
+    <div
+      class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-700/10 rounded-full blur-[120px] -z-10 pointer-events-none">
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 reveal">
+      <div class="glass-panel rounded-2xl p-10 text-center">
+        <h2 class="text-3xl font-semibold tracking-tight text-white">Ready to Understand Money Without Confusion?</h2>
+        <p class="mt-3 text-slate-400">Join learners who have started their journey to financial awareness and
+          independence.</p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
+            target="_blank" rel="noopener noreferrer"
+            class="text-background hover:bg-slate-200 transition-colors shadow-white/5 text-sm font-semibold text-center bg-white rounded-lg pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">
+            Register for Workshop
+          </a>
+          <a href="https://wa.me/918248589694" target="_blank" rel="noopener noreferrer"
+            class="px-8 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors text-center backdrop-blur-sm">
+            WhatsApp Us
+          </a>
+        </div>
+
+        <div class="mt-6">
+          <button type="button"
+            class="inline-flex items-center gap-2 text-xs font-medium text-slate-400 hover:text-white transition-colors"
+            onclick="toggleAccordion('cta-note','accordion-global')" aria-controls="cta-note" aria-expanded="false">
+            <span
+              class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/[0.04] border border-white/10">
+              <iconify-icon icon="solar:info-circle-linear" width="16" class="text-slate-300"
+                stroke-width="1.5"></iconify-icon>
+            </span>
+            Learn more
+            <iconify-icon icon="solar:alt-arrow-down-linear" width="14" class="text-slate-500"
+              stroke-width="1.5"></iconify-icon>
+          </button>
+
+          <div id="cta-note" class="hidden mt-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-left">
+            <p class="text-sm text-slate-400 leading-relaxed">Registration is for educational workshops only.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPORTANT NOTE -->
+  <section id="important-note" class="py-24 border-t border-white/5 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12 text-center reveal">
+        <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Important Note</h2>
+      </div>
+
+      <div class="max-w-4xl mx-auto reveal">
+        <div class="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-8">
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:shield-warning-linear" width="20" class="text-amber-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>All sessions are conducted strictly for educational purposes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:shield-warning-linear" width="20" class="text-amber-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>No financial, legal, or investment advice is provided</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <iconify-icon icon="solar:shield-warning-linear" width="20" class="text-amber-400 shrink-0 mt-0.5"
+                stroke-width="1.5"></iconify-icon>
+              <span>Learning outcomes depend on individual effort and participation</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (SEBI-SAFE) -->
+  <footer id="contact" class="py-16 border-t border-white/5 bg-[#0a1628]">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Main Footer Content -->
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        <!-- Left: Brand & Tagline -->
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Rupeevalcore</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Making financial education accessible, honest, and beginner-friendly.
+          </p>
+        </div>
+
+        <!-- Middle: Quick Links -->
+        <div>
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Quick Links</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="#curriculum" class="text-sm text-slate-300 hover:text-white transition-colors">Curriculum</a>
+            </li>
+            <li>
+              <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors">About Us</a>
+            </li>
+            <li>
+              <a href="#contact" class="text-sm text-slate-300 hover:text-white transition-colors">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Contact -->
+        <div>
+          <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Contact</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:contactrupeevalcore@gmail.com"
+                class="text-sm text-slate-300 hover:text-white transition-colors">
+                Email: contactrupeevalcore@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+918248589694" class="text-sm text-slate-300 hover:text-white transition-colors">
+                Phone: +91 82485 89694
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-white/5 mb-8"></div>
+
+      <!-- Disclaimer Section -->
+      <div class="mb-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-sm font-medium text-white">Disclaimer:</span>
+          <span class="text-sm text-slate-400">Financial education and awareness only.</span>
+        </div>
+
+        <button type="button"
+          class="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+          onclick="toggleDisclaimer()" id="disclaimer-toggle-btn">
+          <span id="disclaimer-toggle-text">Show full disclaimer ↓</span>
+        </button>
+
+
+        <div id="footer-disclaimer-wrapper" class="overflow-hidden transition-all duration-500 max-h-0">
+          <div id="footer-disclaimer" class="mt-4 rounded-xl border border-amber-500/20 bg-white/[0.02] p-6">
+            <h4 class="text-white font-medium mb-4 text-center uppercase tracking-wider">Important Disclaimer</h4>
+
+            <div class="space-y-6 text-sm text-slate-400 leading-relaxed">
+              <div>
+                <h5 class="text-white font-medium mb-2">Educational Purpose Only</h5>
+                <p>These workshops are designed solely for financial literacy and awareness. The content shared is
+                  educational in nature and intended to help participants understand basic financial concepts, market
+                  structures, and personal finance fundamentals.</p>
+              </div>
+
+              <div>
+                <h5 class="text-white font-medium mb-2">No Investment Advice or Recommendations</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>No stock tips, buy/sell recommendations, or specific investment advice is provided</li>
+                  <li>No predictions about market movements or specific securities</li>
+                  <li>No portfolio recommendations or asset allocation suggestions</li>
+                  <li>Participants should consult SEBI-registered investment advisors for personalized advice</li>
+                </ul>
+              </div>
+
+              <div>
+                <h5 class="text-white font-medium mb-2">Not SEBI-Registered Investment Advisory</h5>
+                <p>Rupeevalcore and its trainers do not hold SEBI registration as Investment Advisors (RIA) or Research
+                  Analysts. We do not provide investment advisory services as defined under SEBI regulations.</p>
+              </div>
+
+              <div>
+                <h5 class="text-white font-medium mb-2">Market Risks</h5>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>All investments in securities markets are subject to market risks</li>
+                  <li>Past performance is not indicative of future returns</li>
+                  <li>Participants must read all scheme-related documents carefully before investing</li>
+                  <li>No financial, legal, or investment advice is provided</li>
+                </ul>
+              </div>
+
+              <div>
+                <h5 class="text-white font-medium mb-2">Learning Outcomes</h5>
+                <p>Individual learning outcomes depend on participant effort, engagement, and prior knowledge.
+                  Completion of workshops does not guarantee any specific results or investment success.</p>
+              </div>
+
+              <div>
+                <h5 class="text-white font-medium mb-2">Liability</h5>
+                <p>Rupeevalcore is not liable for any financial decisions or investment outcomes made by participants.
+                  All investment decisions are solely the participant's responsibility.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center text-sm text-slate-500">
+        © <span id="year">2026</span> Rupeevalcore. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 100;
+      revealElements.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add("active");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    // Global accordion rule: details hidden by default, reveal on click.
+    // Supports "one open at a time" per groupId.
+    function toggleAccordion(panelId, groupId) {
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+
+      const isOpening = panel.classList.contains("hidden");
+
+      // Close others in the same group if groupId provided
+      if (groupId) {
+        const groups = document.querySelectorAll('[data-accordion-group="' + groupId + '"]');
+        groups.forEach((group) => {
+          const panels = group.querySelectorAll('div[id]');
+          panels.forEach((p) => {
+            if (p.id !== panelId) p.classList.add("hidden");
+          });
+
+          // Update aria-expanded for buttons in group
+          const btns = group.querySelectorAll('button[aria-controls]');
+          btns.forEach((b) => {
+            if (b.getAttribute("aria-controls") !== panelId) b.setAttribute("aria-expanded", "false");
+          });
+        });
+      } else {
+        // Global group (shared across page) - one open at a time recommended
+        const globalPanels = ["hero-note", "who-note", "trust-note", "cta-note", "footer-disclaimer"];
+        globalPanels.forEach((id) => {
+          if (id !== panelId) {
+            const el = document.getElementById(id);
+            if (el) el.classList.add("hidden");
+          }
+        });
+        const globalBtns = document.querySelectorAll('button[aria-controls]');
+        globalBtns.forEach((b) => {
+          const target = b.getAttribute("aria-controls");
+          if (globalPanels.includes(target) && target !== panelId) b.setAttribute("aria-expanded", "false");
+        });
+      }
+
+      panel.classList.toggle("hidden");
+
+      const btn = document.querySelector('button[aria-controls="' + panelId + '"]');
+      if (btn) btn.setAttribute("aria-expanded", String(isOpening));
+    }
+  </script>
+
+
+
+  <!-- Premium 3D Effects Activation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1-3. Apply 3D tilt, depth shadows, and shimmer to all cards
+      const cards = document.querySelectorAll('.gradient-border, .p-7.rounded-2xl, .p-8.rounded-2xl');
+      cards.forEach(card => {
+        card.classList.add('card-3d-tilt', 'depth-shadow', 'shimmer-effect');
+      });
+
+      // 4. Add glassmorphism to navbar
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        navbar.classList.add('glass-enhanced');
+      }
+
+      // 5-6. Apply magnetic button and 3D press effects to CTA buttons
+      const buttons = document.querySelectorAll('a[href*="google.com/forms"], a[href*="wa.me"], .chat-submit');
+      buttons.forEach(btn => {
+        btn.classList.add('magnetic-button', 'button-3d');
+      });
+
+      // 7. Add certification glow to NISM badges
+      const certBadges = document.querySelectorAll('.border-emerald-500\\/20');
+      certBadges.forEach(badge => {
+        badge.classList.add('certification-glow');
+      });
+
+      // 8. Add floating animation to hero illustration
+      const heroIllustration = document.querySelector('.animate-float');
+      if (heroIllustration) {
+        heroIllustration.classList.add('float-animation');
+      }
+
+      // 9. Enhanced scroll reveal animations
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => {
+        el.classList.add('reveal-enhanced');
+      });
+
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 150;
+        revealElements.forEach((reveal) => {
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - elementVisible) {
+            reveal.classList.add('active');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll(); // Initial check
+
+      // 10. Magnetic button advanced effect (cursor following)
+      buttons.forEach(button => {
+        button.addEventListener('mousemove', function (e) {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+        });
+
+        button.addEventListener('mouseleave', function () {
+          button.style.transform = '';
+        });
+      });
+
+      // ========================================
+      // BUNDLE 3: ADVANCED PREMIUM EFFECTS
+      // ========================================
+
+      // 1. 3D PARALLAX MOUSE TRACKING
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        heroSection.classList.add('parallax-container');
+
+        document.addEventListener('mousemove', (e) => {
+          const x = (e.clientX / window.innerWidth - 0.5) * 20;
+          const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+          heroSection.style.transform = `perspective(1000px) rotateY(${x * 0.5}deg) rotateX(${-y * 0.5}deg)`;
+        });
+      }
+
+      // 2. STAGGERED CARD ENTRANCE
+      const cardGrids = document.querySelectorAll('.grid');
+      cardGrids.forEach(grid => {
+        const gridCards = grid.querySelectorAll('.p-7, .p-8');
+        gridCards.forEach((card, index) => {
+          card.classList.add('stagger-item');
+          card.style.transitionDelay = `${index * 100}ms`;
+        });
+      });
+
+      const staggerOnScroll = () => {
+        const staggerItems = document.querySelectorAll('.stagger-item');
+        staggerItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            item.classList.add('stagger-visible');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', staggerOnScroll);
+      staggerOnScroll();
+
+      // 3. MORPHING GRADIENT BACKGROUND
+      document.body.classList.add('morphing-bg');
+
+      // 6. CURSOR TRAIL EFFECT - DISABLED (using normal cursor)
+      /*
+      const cursorDots = [];
+      const maxDots = 12;
+
+      for (let i = 0; i < maxDots; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'cursor-dot';
+        dot.style.opacity = 1 - (i / maxDots);
+        document.body.appendChild(dot);
+        cursorDots.push({ element: dot, x: 0, y: 0 });
+      }
+
+      let mouseX = 0, mouseY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animateCursorDots() {
+        cursorDots.forEach((dot, index) => {
+          if (index === 0) {
+            dot.x += (mouseX - dot.x) * 0.3;
+            dot.y += (mouseY - dot.y) * 0.3;
+          } else {
+            const prev = cursorDots[index - 1];
+            dot.x += (prev.x - dot.x) * 0.3;
+            dot.y += (prev.y - dot.y) * 0.3;
+          }
+
+          dot.element.style.transform = `translate(${dot.x - 4}px, ${dot.y - 4}px)`;
+        });
+
+        requestAnimationFrame(animateCursorDots);
+      }
+
+      animateCursorDots();
+      */
+
+      // 7. 3D LAYERED HERO
+      const heroContent = document.querySelector('section .space-y-8');
+      if (heroContent) {
+        heroContent.classList.add('hero-3d-layer');
+      }
+
+      // 8. MICROINTERACTIONS
+      const icons = document.querySelectorAll('iconify-icon');
+      icons.forEach(icon => {
+        if (icon.parentElement) {
+          icon.parentElement.classList.add('micro-bounce');
+        }
+      });
+
+      const headings = document.querySelectorAll('h2, h3');
+      headings.forEach(heading => {
+        heading.classList.add('micro-pulse');
+      });
+
+      // 10. LIQUID/BLOB ANIMATIONS
+      const bodyElement = document.body;
+      for (let i = 1; i <= 3; i++) {
+        const blob = document.createElement('div');
+        blob.className = `blob blob-${i}`;
+        bodyElement.appendChild(blob);
+      }
+
+      // BONUS: Custom Cursor Follower - DISABLED (using normal cursor)
+      /*
+      const cursorFollower = document.createElement('div');
+      cursorFollower.className = 'cursor-follower';
+      document.body.appendChild(cursorFollower);
+
+      document.addEventListener('mousemove', (e) => {
+        cursorFollower.style.left = e.clientX - 20 + 'px';
+        cursorFollower.style.top = e.clientY - 20 + 'px';
+      });
+
+      // Cursor hover state on interactive elements
+      const interactiveElements = document.querySelectorAll('a, button, input, textarea, [role="button"]');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursorFollower.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursorFollower.classList.remove('cursor-hover');
+        });
+      });
+      */
+
+      console.log('🎨 Premium 3D effects activated!');
+      console.log('🚀 Bundle 3: COMPLETE PREMIUM package loaded!');
+      console.log('✨ All 20 motion effects active!');
+
+      // ========================================
+      // PREMIUM FEEL PACKAGE - USER-FOCUSED
+      // ========================================
+
+      // 1. GLOWING PULSE ON CTA BUTTONS
+      const ctaButtons = document.querySelectorAll('a[href*="google.com/forms"]');
+      ctaButtons.forEach(btn => {
+        btn.classList.add('cta-pulse');
+      });
+
+      // 2. BREATHING CERTIFICATION BADGES
+      const nismBadges = document.querySelectorAll('.border-emerald-500\\/20');
+      nismBadges.forEach(badge => {
+        badge.classList.add('badge-breathe');
+      });
+
+      // 3. FLOATING FINANCE ICONS
+      const heroSection2 = document.querySelector('section');
+      if (heroSection2) {
+        const icons = ['💰', '📊', '📈', '🎓', '💳'];
+        icons.forEach((icon, index) => {
+          const iconEl = document.createElement('div');
+          iconEl.className = `floating-icon floating-icon-${index + 1}`;
+          iconEl.textContent = icon;
+          heroSection2.appendChild(iconEl);
+        });
+      }
+
+      // 4. SCROLL PROGRESS BAR
+      const progressBar = document.createElement('div');
+      progressBar.className = 'scroll-progress';
+      document.body.appendChild(progressBar);
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+      });
+
+
+      // MOBILE OPTIMIZATIONS
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+        window.innerWidth < 768;
+
+      if (isMobile) {
+        // On mobile, reduce floating icons to 3 instead of 5
+        const mobileIcons = document.querySelectorAll('.floating-icon');
+        if (mobileIcons.length > 3) {
+          mobileIcons[3].remove();
+          mobileIcons[4].remove();
+        }
+
+        // Reduce animation duration on mobile for performance
+        document.documentElement.style.setProperty('--animation-speed', '0.7');
+
+        console.log('📱 Mobile optimizations applied!');
+      }
+
+      console.log('💎 Premium Feel Package activated!');
+      console.log('✨ CTA glow pulse, breathing badges, floating icons, and scroll progress active!');
+
+      // ========================================
+      // SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+      // Works on both mobile and desktop
+      // ========================================
+
+      // Add scroll-reveal class to all sections and key elements
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section, index) => {
+        // Add reveal to section headings
+        const heading = section.querySelector('h2');
+        if (heading) {
+          heading.classList.add('scroll-reveal');
+          heading.style.transitionDelay = '0.1s';
+        }
+
+        // Add reveal to cards within sections
+        const cards = section.querySelectorAll('.p-7, .p-8, .p-6, .p-5');
+        cards.forEach((card, cardIndex) => {
+          card.classList.add('scroll-reveal');
+          card.style.transitionDelay = `${0.1 + cardIndex * 0.08}s`;
+        });
+
+        // Add reveal to grid containers
+        const grids = section.querySelectorAll('.grid');
+        grids.forEach(grid => {
+          grid.classList.add('scroll-reveal-scale');
+          grid.style.transitionDelay = '0.2s';
+        });
+      });
+
+      // Create IntersectionObserver for scroll reveals
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all scroll-reveal elements
+      document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      console.log('🎬 Scroll reveal animations active!');
+
+      // ========================================
+      // SMOOTH SCROLL FOR ANCHOR LINKS (Mobile)
+      // ========================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      console.log('📱🎨 All mobile + desktop effects loaded!');
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script>
+    if (window.innerWidth > 768) {
+      VanillaTilt.init(document.querySelector(".hero-tilt"), {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+        scale: 1.02
+      });
+    }
+    function toggleDisclaimer() {
+      const wrapper = document.getElementById('footer-disclaimer-wrapper');
+      const text = document.getElementById('disclaimer-toggle-text');
+      const isOpening = wrapper.style.maxHeight === '0px' || wrapper.style.maxHeight === '';
+
+      if (isOpening) {
+        wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+        text.textContent = 'Hide disclaimer ↑';
+      } else {
+        wrapper.style.maxHeight = '0px';
+        text.textContent = 'Show full disclaimer ↓';
+      }
+    }
+
+    // Counter Animation
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.animate-counter');
+      const speed = 200; // The lower the slower
+
+      const observerOptions = {
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = +counter.getAttribute('data-target');
+            const duration = +counter.getAttribute('data-duration') || 1500;
+            const start = 0;
+
+            let startTime = null;
+
+            function step(timestamp) {
+              if (!startTime) startTime = timestamp;
+              const progress = Math.min((timestamp - startTime) / duration, 1);
+
+              // Easing function: easeInOutQuad (starts slow, speeds up, slows at end)
+              const ease = progress < 0.5
+                ? 2 * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+              const current = Math.floor(ease * target);
+              counter.innerText = current.toLocaleString('en-IN');
+
+              if (progress < 1) {
+                window.requestAnimationFrame(step);
+              } else {
+                counter.innerText = target.toLocaleString('en-IN');
+              }
+            }
+
+            window.requestAnimationFrame(step);
+            observer.unobserve(counter);
+          }
+        });
+      }, observerOptions);
+
+      counters.forEach(counter => observer.observe(counter));
+    };
+
+    document.addEventListener('DOMContentLoaded', animateCounters);
+  </script>
+  <!-- Premium Chatbot Complete -->
+  <style>
+    /* Chatbot Bubble */
+    .chat-bubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+      z-index: 10000;
+      font-size: 32px;
+      color: white;
+      transition: transform 0.3s ease;
+      animation: pulse-bubble 2s infinite;
+    }
+
+    .chat-bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+    }
+
+    .pulse-ring {
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      border: 2px solid #667eea;
+      border-radius: 50%;
+      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse-bubble {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Chat Widget */
+    .chat-widget {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 400px;
+      max-height: 600px;
+      background: rgba(10, 31, 61, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      flex-direction: column;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      animation: fadeIn 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-close-btn {
+      cursor: pointer;
+      font-size: 28px;
+      line-height: 1;
+      opacity: 0.9;
+      transition: all 0.2s;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .chat-close-btn:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.5);
+      scrollbar-width: thin;
+      scrollbar-color: #667eea rgba(255, 255, 255, 0.1);
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: #667eea;
+      border-radius: 3px;
+    }
+
+    .msg {
+      margin: 12px 0;
+      padding: 12px 16px;
+      border-radius: 16px;
+      max-width: 75%;
+      word-wrap: break-word;
+      animation: fadeIn 0.4s ease;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .msg-user {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      margin-left: auto;
+      text-align: right;
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    }
+
+    .msg-bot {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e8eaed;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .msg-success {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+      margin: 12px auto;
+      text-align: center;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(17, 153, 142, 0.3);
+    }
+
+    .course-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      background: white;
+      border: 1px solid #667eea;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #4a5568;
+      text-align: left;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-btn:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+      border-color: transparent;
+    }
+
+    .chat-input-area {
+      padding: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      gap: 10px;
+      background: rgba(10, 31, 61, 0.5);
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+      outline: none;
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+
+    .chat-input:focus {
+      border-color: #667eea;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .send-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .send-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .restart-btn {
+      display: block;
+      margin: 16px auto;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .restart-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+    }
+
+    @media (max-width: 500px) {
+      .chat-widget {
+        width: calc(100vw - 40px);
+        max-height: calc(100vh - 120px);
+        bottom: 90px;
+      }
+    }
+  </style>
+
+  <div class="chat-bubble" onclick="toggleChat()">
+    <div class="pulse-ring"></div>
+    💬
+  </div>
+
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-header">
+      <div>
+        <strong style="font-size: 1.1rem;">RupeeBot</strong><br>
+        <span style="font-size: 12px; opacity: 0.9; font-weight: 300;">Online Now</span>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()">×</button>
+    </div>
+
+    <div id="chat-messages" class="chat-messages"></div>
+
+    <div class="chat-input-area" id="input-container">
+      <input id="chat-input" class="chat-input" type="text" placeholder="Type your answer..."
+        onkeypress="if(event.key === 'Enter') handleUserInput()">
+      <button onclick="handleUserInput()" class="send-btn">
+        <iconify-icon icon="solar:plain-bold" width="20"></iconify-icon>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPTURL = "https://script.google.com/macros/s/AKfycbyArVVqN3gPnX7QPsQgytlyQPlD-_haeVqbznj-U6A87tyNqeiqj4GX151c-rsm-ktThw/exec";
+
+    let chatState = {
+      step: 0,
+      name: '',
+      email: '',
+      phone: '',
+      course: ''
+    };
+
+    const courses = [
+      "Personal Finance & Money Management",
+      "Stock Market Basics",
+      "Insurance & Tax Awareness",
+      "Investment Planning",
+      "College Financial Literacy Program",
+      "Complete Course (All Modules + Certificate)"
+    ];
+
+    const questions = [
+      "Hi! Welcome to Rupeevalcore. 👋",
+      "I'm RupeeBot. What's your name?",
+      "Nice to meet you, {name}! 😊\n\nWhat's your email address?",
+      "Thanks! And your phone number? (e.g., +91 99999...)",
+      "Perfect! Which finance workshop interests you?"
+    ];
+
+    function toggleChat() {
+      const widget = document.getElementById('chat-widget');
+      const isHidden = widget.style.display === 'none' || !widget.style.display;
+
+      widget.style.display = isHidden ? 'flex' : 'none';
+
+      if (isHidden) {
+        // Reset state
+        chatState = { step: 0, name: '', email: '', phone: '', course: '' };
+        document.getElementById('chat-messages').innerHTML = '';
+        document.getElementById('input-container').style.display = 'flex';
+        document.getElementById('chat-input').disabled = false;
+        document.getElementById('chat-input').placeholder = 'Type your answer...';
+
+        // Start conversation
+        setTimeout(() => {
+          addMessage(questions[0], 'bot');
+          setTimeout(() => addMessage(questions[1], 'bot'), 800);
+        }, 400);
+      }
+    }
+
+    function handleUserInput() {
+      const input = document.getElementById('chat-input');
+      const userAnswer = input.value.trim();
+
+      if (!userAnswer) return;
+
+      input.value = '';
+      addMessage(userAnswer, 'user');
+
+      // Process input after a short delay
+      setTimeout(() => {
+        switch (chatState.step) {
+          case 0: // Name
+            if (userAnswer.length < 2) {
+              addMessage("Please enter a valid name (at least 2 letters).", 'bot');
+              return;
+            }
+            chatState.name = userAnswer;
+            chatState.step++;
+            setTimeout(() => {
+              addMessage(questions[2].replace('{name}', chatState.name), 'bot');
+            }, 600);
+            break;
+
+          case 1: // Email
+            if (!validateEmail(userAnswer)) {
+              addMessage("Oops! Please enter a valid email (e.g., name@example.com)", 'bot');
+              return;
+            }
+            chatState.email = userAnswer;
+            chatState.step++;
+            setTimeout(() => addMessage(questions[3], 'bot'), 600);
+            break;
+
+          case 2: // Phone
+            if (!validatePhone(userAnswer)) {
+              addMessage("Please enter a valid phone number (e.g., +91 9999999999)", 'bot');
+              return;
+            }
+            chatState.phone = userAnswer;
+            chatState.step++;
+
+            // Show question AND course buttons
+            setTimeout(() => {
+              addMessage(questions[4], 'bot');
+              setTimeout(() => {
+                showCourseButtons();
+              }, 600);
+            }, 600);
+            break;
+
+          case 3: // Course (Manual Entry fallback)
+            chatState.course = userAnswer;
+            confirmAndSubmit();
+            break;
+        }
+      }, 400);
+    }
+
+    function showCourseButtons() {
+      const messagesDiv = document.getElementById('chat-messages');
+      const btnContainer = document.createElement('div');
+      btnContainer.style.cssText = 'margin: 12px 0; max-width: 90%; animation: fadeIn 0.5s ease;';
+
+      // Hide input area during selection
+      document.getElementById('input-container').style.display = 'none';
+
+      courses.forEach((course, index) => {
+        const btn = document.createElement('div');
+        btn.className = 'course-btn';
+        btn.textContent = course;
+        btn.onclick = () => selectCourse(course);
+        btn.style.animation = `fadeIn 0.4s ease ${index * 0.1}s backwards`;
+        btnContainer.appendChild(btn);
+      });
+
+      messagesDiv.appendChild(btnContainer);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function selectCourse(course) {
+      chatState.course = course;
+      addMessage(course, 'user');
+
+      // Remove buttons
+      const buttons = document.querySelectorAll('.course-btn');
+      buttons.forEach(b => b.parentElement.remove()); // Remove container
+
+      setTimeout(() => confirmAndSubmit(), 600);
+    }
+
+    function confirmAndSubmit() {
+      addMessage("Great! Submitting your details...", 'bot');
+
+      // Use URLSearchParams for Google Apps Script compatibility
+      const formData = new URLSearchParams();
+      formData.append('name', chatState.name);
+      formData.append('email', chatState.email);
+      formData.append('phone', chatState.phone);
+      formData.append('course', chatState.course);
+      formData.append('message', `Interested in Course: ${chatState.course}`);
+
+      // Simplified fetch call
+      fetch(SCRIPTURL, {
+        method: 'POST',
+        body: formData
+      })
+        .then(() => {
+          addMessage(`Thank you, ${chatState.name}! We have received your request for <b>${chatState.course}</b>.`, 'bot', true);
+          addMessage(`We'll contact you at ${chatState.email} within 24 hours.`, 'bot');
+
+          // Restart button
+          const btn = document.createElement('button');
+          btn.className = 'restart-btn';
+          btn.textContent = 'Start New Chat';
+          btn.onclick = () => toggleChat();
+          document.getElementById('chat-messages').appendChild(btn);
+          const container = document.getElementById('chat-messages');
+          container.scrollTop = container.scrollHeight;
+        })
+        .catch(error => {
+          addMessage("Error submitting form. Please contact us directly.", 'bot');
+          console.error('Error!', error);
+        });
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePhone(phone) {
+      return phone.replace(/[^0-9]/g, '').length >= 10;
+    }
+
+    function addMessage(text, sender, isHTML = false) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = sender === 'bot' ? 'msg msg-bot' : 'msg msg-user';
+      if (isHTML) div.innerHTML = text;
+      else div.textContent = text;
+
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+  </script>
+</body>
+
+</html>
