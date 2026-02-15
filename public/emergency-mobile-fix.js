@@ -1,73 +1,81 @@
-// Dynamic Chatbot Implementation
+// Emergency Mobile Fix Chatbot
 
-class ChatBot {
-    constructor() {
-        this.steps = [
-            this.question1,
-            this.question2,
-            this.question3
-        ];
-        this.currentStep = 0;
-    }
+// Function to initialize the chatbot
+function initChatbot() {
+    displayWelcomeMessage();
+    setUpInteraction();
+}
 
-    start() {
-        this.sendMessage("Welcome to the interactive chatbot! Let's begin.");
-        this.nextStep();
-    }
+// Function to display the welcome message
+function displayWelcomeMessage() {
+    const welcomeMessage = 'Welcome to the Emergency Mobile Fix Chatbot!';
+    renderMessage(welcomeMessage);
+    displayButtons(['Start', 'Help']);
+}
 
-    nextStep() {
-        if (this.currentStep < this.steps.length) {
-            this.steps[this.currentStep].call(this);
-            this.currentStep++;
-        } else {
-            this.sendMessage("Thank you for your responses!");
+// Function to set up interaction response
+function setUpInteraction() {
+    document.addEventListener('click', (event) => {
+        if (event.target.matches('.btn')) {
+            handleButtonClick(event.target.innerText);
         }
-    }
+    });
+}
 
-    question1() {
-        this.sendMessage("What is your name?");
-        this.createResponseButtons(["Submit", "Skip"]);
-    }
-
-    question2() {
-        this.sendMessage("What service are you interested in?");
-        this.createResponseButtons(["Inquiry", "Registration"]);
-    }
-
-    question3() {
-        this.sendMessage("Would you like to receive updates?");
-        this.createResponseButtons(["Yes", "No"]);
-    }
-
-    sendMessage(message) {
-        // Function to display message from the bot with proper styling
-        console.log(`Bot: ${message}`);
-    }
-
-    createResponseButtons(options) {
-        // Function to create buttons for user responses
-        options.forEach(option => {
-            console.log(`Button: ${option}`);
-        });
-        // Simulate user response handling
-        this.handleUserResponse(options);
-    }
-
-    handleUserResponse(options) {
-        // Simulate user selecting an option and navigating if needed
-        const simulatedUserResponse = options[0]; // Simulating the first button click
-        if (simulatedUserResponse === "Registration") {
-            this.navigateToRegistration();
-        }
-        this.nextStep();
-    }
-
-    navigateToRegistration() {
-        // Function to handle navigation to registration forms
-        console.log("Navigating to registration form...");
+// Function to handle button clicks
+function handleButtonClick(buttonText) {
+    switch (buttonText) {
+        case 'Start':
+            stepOne();
+            break;
+        case 'Help':
+            displayHelp();
+            break;
+        default:
+            renderMessage('I did not understand that. Please choose an option.');
     }
 }
 
-// Initialize and start the chatbot
-const chatbot = new ChatBot();
-chatbot.start();
+// Step One of the conversation flow
+function stepOne() {
+    renderMessage('Step 1: Please describe your mobile issue.');
+    // Here, we would handle user input and continue the flow based on response.
+}
+
+// Function to display help
+function displayHelp() {
+    renderMessage('For assistance, please call support at 123-456-7890.');
+}
+
+// Function to render messages with animation
+function renderMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.innerText = message;
+    messageElement.classList.add('chat-message');
+    document.getElementById('chat-container').appendChild(messageElement);
+    animateMessage(messageElement);
+}
+
+// Function to animate messages
+function animateMessage(element) {
+    element.style.opacity = '0';
+    setTimeout(() => {
+        element.style.transition = 'opacity 0.5s';
+        element.style.opacity = '1';
+    }, 100);
+}
+
+// Function to display interactive buttons
+function displayButtons(buttons) {
+    const buttonContainer = document.getElementById('button-container');
+    buttonContainer.innerHTML = ''; // Clear previous buttons
+    buttons.forEach((button) => {
+        const buttonElement = document.createElement('button');
+        buttonElement.innerText = button;
+        buttonElement.classList.add('btn');
+        buttonContainer.appendChild(buttonElement);
+    });
+}
+
+// Initialize the chatbot when the page loads
+window.onload = initChatbot;
