@@ -2183,6 +2183,46 @@
       transform: translateY(0) !important;
       filter: none !important;
     }
+
+    /* NUCLEAR OPTION: Force ALL content visible immediately */
+    section:first-of-type,
+    section:first-of-type *,
+    section:first-of-type *::before,
+    section:first-of-type *::after {
+      opacity: 1 !important;
+      visibility: visible !important;
+      /* display: block !important; -- Omitted to prevent breaking flex/grid layouts */
+      transform: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /* FINAL FIX: Position hero at top of viewport */
+    section:first-of-type {
+      margin-top: 0 !important;
+      padding-top: 80px !important;
+      /* Space for fixed header */
+      position: relative;
+      top: 0;
+      min-height: 100vh !important;
+    }
+
+    /* Remove any body/container spacing pushing content down */
+    body {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    main {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    /* Ensure hero content starts right below header */
+    section:first-of-type>div:first-child {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
   </style>
   <div
     class="fixed top-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse mix-blend-screen">
