@@ -1,99 +1,197 @@
-# Rupeevalcore Project Documentation
+# Project Overview
+- **Website**: Rupeevalcore Financial Education Platform
+- **Purpose**: Educational workshops on personal finance and stock markets
+- **Target audience**: Beginners with no prior knowledge
+- **Primary device**: Mobile-first (60%+ traffic)
+- **Compliance**: SEBI-compliant educational content (not investment advisory)
 
-## 1. Project Overview
-**Rupeevalcore** is a premium finance education platform based in Chennai, offering both online and offline workshops. The project aims to make financial literacy accessible to everyone—from students to working professionals—through structured, beginner-friendly modules. The website serves as a landing page for curriculum details, learning formats, trust building (reviews/about), and registration via Google Forms.
+# Features Summary
 
----
+## For Business Users:
+- **Hero section** with workshop overview
+- **Workshop curriculum** (6 modules with dropdowns)
+- **Learning levels** (Beginner, Intermediate, Advanced)
+- **Pricing tiers** (Group ₹499, One-to-One custom)
+- **About section** with NISM Series-XII certification
+- **Why Trust section** (4 credibility points)
+- **Founder & Team profiles** (3 members)
+- **Testimonials carousel**
+- **FAQ section**
+- **Premium animated chatbot** (RupeeBot)
+- **Comprehensive legal disclaimer**
+- **Contact form** and footer
 
-## 2. Features Summary
-- **Interactive Workshop Curriculum**: 6+ modules with "View Topics" dropdowns for deep-dives into topics like Stock Market Basics, Taxation, and Insurance.
-- **Dynamic 3D Hero Section**: Interactive dashboard card using `vanilla-tilt.js` for a premium desktop experience.
-- **Premium Chatbot**: Integrated with Google Sheets to collect user inquiries and leads automatically.
-- **Counter Animations**: Numbers like pricing and statistics animate gracefully when scrolled into view using the Intersection Observer API.
-- **NISM-XII Certification**: Prominent badging and trainer certification details (Manikandan C) to establish trust and SEBI-aligned educational standards.
-- **Comprehensive Legal Disclaimer**: A toggle-based disclaimer system ensuring regulatory transparency while keeping the UI clean.
-- **Fully Responsive Design**: Optimized for everything from small mobile devices (360px) to large desktop monitors.
+## For Developers:
+- **Tailwind CSS** framework
+- **Vanilla JavaScript** (no heavy libraries)
+- **Iconify** for icons
+- **Google Sheets backend** via Apps Script
+- **Intersection Observer** for animations
+- **GPU-accelerated CSS animations**
+- **Mobile-first responsive design**
+- **Vanilla-tilt.js** for 3D effects
 
----
+# Technical Stack
+- **HTML5** (semantic structure)
+- **CSS**: Tailwind CSS v3.x (CDN) + custom inline styles
+- **JavaScript**: Vanilla JS
+- **Icons**: Iconify
+- **3D Effects**: Vanilla-tilt.js (desktop only)
+- **Backend**: Google Apps Script
+- **Database**: Google Sheets
+- **Hosting**: Vercel
+- **Domain**: www.rupeevalcore.in
+- **Performance**: Lazy loading, deferred scripts, Intersection Observer
 
-## 3. Technical Stack
-- **Frontend**: HTML5, Vanilla JavaScript.
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (CDN-based for quick iteration).
-- **Icons**: [Iconify](https://iconify.design/) (Solar Linear library).
-- **Animations**: CSS Keyframes + [Vanilla-tilt.js](https://micku7zu.github.io/vanilla-tilt.js/) for 3D effects.
-- **Backend Integration**: [Google Apps Script](https://developers.google.com/apps-script) (for Chatbot form to Google Sheets).
-- **Development Tools**: [Vite](https://vitejs.dev/) for local serving and HMR.
+# Version History
 
----
+- **Version 1 - Workshop Curriculum Hidden Topics**
+  - Date: February 2026
+  - Changes: Curriculum subtopics hidden by default, "View Topics" dropdown, improved mobile UX
 
-## 4. Version History
+- **Version 2 - NISM Certification Badge**
+  - Date: February 2026
+  - Changes: Added NISM Series-XII certification card, SEBI-compliant wording
 
-| Version | Date | Key Changes |
-| :--- | :--- | :--- |
-| **V1** | Jan 15, 2026 | Initial landing page launch with Hero, About, Curriculum, and Contact. |
-| **V2** | Jan 22, 2026 | Added "View Topics" dropdowns to the Curriculum section. |
-| **V3** | Jan 29, 2026 | Added NISM Series-XII certification card in the About section. |
-| **V4** | Feb 05, 2025 | Integrated Premium Chatbot with Google Sheets lead generation. |
-| **V5** | Feb 10, 2026 | Added `vanilla-tilt.js` 3D hover effects to the Hero dashboard. |
-| **V6** | Feb 14, 2026 | Mobile UI optimizations, logo alignment fix, and "PREMIUM" badge overlap resolution. |
-| **V7** | Feb 15, 2026 | Added comprehensive Disclaimer with toggle; implemented smooth Counter Animations using Intersection Observer. |
+- **Version 3 - Premium Animations & 3D Effects**
+  - Date: February 2026
+  - Changes: Floating gradient blobs, 3D card hover, vanilla-tilt, counter animations
 
----
+- **Version 4 - Chatbot Google Sheets Fix**
+  - Date: February 2026
+  - Changes: Fixed CORS error, updated Apps Script URL
 
-## 5. File Structure
-```text
-NEW-WORLD-RUPEE/
-├── index.html          # Main application file (HTML, CSS, JS)
-├── logo.jpg            # Official project logo
-├── package.json        # Project metadata and dependencies (Vite)
-└── PROJECT_DOCUMENTATION.md # This documentation file
+- **Version 5 - Comprehensive Disclaimer**
+  - Date: February 2026
+  - Changes: Added detailed legal disclaimer with toggle
+
+- **Version 6 - Manikandan NISM Certification**
+  - Date: February 2026
+  - Changes: Added NISM certification to team profile
+
+- **Version 7 - Premium Chatbot Dark Theme**
+  - Date: February 2026
+  - Changes: Rebuilt chatbot with dark theme, premium animations
+
+- **Version 8 - Final Production**
+  - Date: February 16, 2026
+  - Changes: Apps Script URL updated, Google Sheets integration working, complete documentation
+
+# File Structure
+```
+/
+├── index.html (all-in-one: HTML + CSS + JavaScript)
+├── logo.jpg (Rupeevalcore logo)
+├── PROJECT_DOCUMENTATION.md (this file)
+└── README.md (GitHub readme)
 ```
 
----
+# How to Update Content (Business Users - Non-Technical)
 
-## 6. How to Update Content (Business Guide)
-### Updating Workshop Prices
-1. Open `index.html`.
-2. Search for the `animate-counter` tag inside the Pricing section.
-3. Update both the `data-target` attribute AND the inner text (e.g., `<span class="animate-counter" data-target="999">999</span>`).
+## Update Pricing:
+- Search for: "Starting from" or "₹499"
+- Change the numbers
+- Save file
 
-### Updating Registration Links
-1. Search for `docs.google.com/forms`.
-2. Replace the URL in the `href` attribute of the "Register" and "Book Session" buttons.
+## Update Curriculum Topics:
+- Search for: `id="curriculum"`
+- Edit the bullet list items under each card
+- Save file
 
-### Changing Module Topics
-1. Navigate to the `<!-- WORKSHOP CURRICULUM -->` section.
-2. Edit the `<li>` items inside the `<ul>` tags of the respective module.
+## Update Team Members:
+- Search for: "Founder & Team"
+- Edit names, roles, descriptions
+- Save file
 
----
+## Update Testimonials:
+- Search for: "Top Review Picks"
+- Add/remove testimonial cards
+- Keep same structure
 
-## 7. Developer Guide
-- **Architecture**: The project follows a single-file architecture for portability. All critical CSS/JS is inline or loaded via CDN.
-- **Styling**: Uses Tailwind utility classes. For custom glassmorphism, refer to `.glass-panel` and `.gradient-border` classes in the `<style>` block.
-- **Animations**:
-    - **Reveal on Scroll**: Controlled by the `reveal` class and `revealOnScroll` function.
-    - **Counter**: Triggered via `IntersectionObserver` on elements with the `animate-counter` class.
-- **Chatbot Logic**: The `chatState` object manages the conversation flow. Submissions are sent via `fetch()` to a Google Apps Script Web App URL.
+## Update Contact Details:
+- Search for: "contactrupeevalcoregmail.com" or "8248589694"
+- Replace with new contact info
+- Save file
 
----
+# Developer Guide
 
-## 8. Troubleshooting Guide
-- **Chatbot Not Submitting**: Check if the `scriptURL` in the JavaScript section is still valid and reachable.
-- **3D Effect Not Working**: Ensure the browser is on desktop (width > 768px). Vanilla-tilt is disabled on mobile for performance.
-- **Dropdowns Not Opening**: Verify that `toggleAccordion` is called with the correct ID and that IDs are unique across the page.
-- **Counters Not Starting**: Ensure JavaScript is enabled and the element is scrolled at least 50% into view.
+## Update Chatbot Apps Script URL:
+```javascript
+// Find in chatbot section:
+const SCRIPTURL = "https://script.google.com/macros/s/YOUR_ID/exec";
+// Replace after redeploying Apps Script
+```
 
----
+## Modify Animations:
+- Find `@keyframes` CSS rules
+- Adjust timing in `.reveal`, `.float` classes
+- Change easing functions
 
-## 9. Performance Notes
-- **Resource Hints**: The project uses `preconnect` for Google Fonts and CDNs.
-- **Image Optimization**: The logo and assets use `loading="lazy"` where applicable to conserve bandwidth.
-- **Script Handling**: Scripts are placed at the bottom of the `<body>` or use `defer` to prevent render-blocking.
+## Add New Sections:
+- Follow existing section structure
+- Use Tailwind utility classes
+- Add `.reveal` class for scroll animations
+- Test mobile-first (360px width)
 
----
+## Customize Colors:
+- Primary gradient: `#667eea` to `#764ba2`
+- Background: `#0a1f3d`
+- Update consistently
 
-## 10. Future Recommendations
-1. **Asset Separation**: Move inline CSS and JS to external files (`style.css`, `script.js`) for better caching and maintainability.
-2. **SEO**: Add Open Graph (OG) tags and a structured data schema for "EducationalOrganization".
-3. **Analytics**: Integrate Google Analytics or Plausible to track conversion rates on registration buttons.
-4. **Self-Hosted Fonts**: Host fonts locally to reduce external dependencies and improve load times.
+# Troubleshooting Guide
+
+## Chatbot not saving to Google Sheets:
+- Check Apps Script deployment (Execute as: Me, Access: Anyone)
+- Verify `SCRIPTURL` matches deployed URL
+- Check browser console for CORS errors
+- Ensure Sheet has headers: Timestamp, Name, Email, Phone, Course
+
+## Animations laggy on mobile:
+- Disable vanilla-tilt on touch devices
+- Reduce animation duration
+- Remove blur effects on mobile
+
+## Horizontal scroll on mobile:
+- Check for fixed-width elements
+- Use `max-w-full`
+- Test on real device
+
+## Dropdowns not working:
+- Check console for JavaScript errors
+- Verify `toggleAccordion` function exists
+- Ensure click handlers attached
+
+# Performance Notes
+
+## Current optimizations:
+- Lazy loading images
+- Deferred JavaScript
+- GPU-accelerated animations
+- Intersection Observer API
+- Mobile-first design
+
+## Lighthouse targets:
+- Performance: 90+ (mobile), 95+ (desktop)
+- Accessibility: 95+
+- Best Practices: 95+
+- SEO: 95+
+
+# Future Recommendations
+
+## Short-term (1-3 months):
+- Google Analytics
+- WhatsApp CTA button
+- Blog section for SEO
+- Downloadable PDF syllabus
+
+## Medium-term (3-6 months):
+- Payment gateway (Razorpay)
+- Workshop calendar
+- Email automation
+- Multi-language support
+
+## Long-term (6-12 months):
+- Progressive Web App
+- Live streaming
+- Community forum
+- Certificate issuance

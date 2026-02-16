@@ -3,7 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>Rupeevalcore | Finance Education Workshops</title>
+  <title>Rupeevalcore | Finance Education Workshops in Chennai</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Rupeevalcore offers beginner-friendly finance education workshops in Chennai on personal finance, stock market basics, mutual funds, insurance, and tax awareness. NISM-certified trainers, SEBI-compliant content.">
+  <meta name="keywords"
+    content="finance workshops Chennai, stock market basics, personal finance education, investment workshop, NISM certification, financial literacy, money management, mutual funds basics, tax awareness, insurance basics, beginner finance course">
+  <meta name="author" content="Rupeevalcore">
+  <link rel="canonical" href="https://www.rupeevalcore.in">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Rupeevalcore - Financial Education Workshops in Chennai">
+  <meta property="og:description"
+    content="Learn personal finance, stock markets, and investment basics through beginner-friendly workshops. NISM-certified, SEBI-compliant education.">
+  <meta property="og:url" content="https://www.rupeevalcore.in">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.rupeevalcore.in/logo.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rupeevalcore - Financial Education Made Accessible">
+  <meta name="twitter:description"
+    content="Beginner-friendly finance workshops on stock markets, personal finance, and investments in Chennai.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
@@ -25,10 +47,10 @@
             sans: ["", "sans-serif"],
           },
           colors: {
-            background: "#030712",
-            surface: "#0f172a",
-            primary: "#6366f1",
-            secondary: "#a855f7",
+            background: "#1a1a1a",
+            surface: "#1e1e1e",
+            primary: "#667eea",
+            secondary: "#764ba2",
           },
           animation: {
             "fade-in-up": "fadeInUp 0.8s ease-out forwards",
@@ -54,15 +76,49 @@
   </script>
   <style>
     body {
-      background-color: #030712;
-      color: #f8fafc;
+      background-color: #1a1a1a !important;
+      color: #e0e0e0 !important;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(0, 31, 63, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 61, 122, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 50% 0%, #001f3f 0%, transparent 60%);
-      background-attachment: fixed;
+      background-image: none !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #ffffff !important;
+    }
+
+    p,
+    div,
+    span {
+      color: #e0e0e0 !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea, #764ba2) !important;
+      border: none !important;
+    }
+
+    .btn-secondary {
+      background: #2a2a2a !important;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    input,
+    textarea {
+      background: #242424 !important;
+      border: 1px solid #404040;
+      color: #e0e0e0 !important;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
     }
 
     .bg-grid-white {
@@ -137,10 +193,226 @@
     }
 
     .text-gradient-logo {
-      background: linear-gradient(to right, #0066cc, #003d7a);
+      background: linear-gradient(to right, #667eea, #764ba2);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    /* SECTION-BY-SECTION UNIQUE STYLING */
+
+    /* 1. HEADER - Solid Black with Blue Bottom Border */
+    header,
+    nav {
+      background: rgba(26, 26, 26, 0.95) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid rgba(102, 126, 234, 0.4) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 2. HERO SECTION - Darkest with Subtle Gradient Overlay */
+    .hero-section,
+    section[class*="hero"] {
+      background: #1a1a1a !important;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 80px 20px;
+    }
+
+    .hero-section::before,
+    section[class*="hero"]::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(102, 126, 234, 0.04) 0%,
+          transparent 50%,
+          rgba(118, 75, 162, 0.04) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-section>*,
+    section[class*="hero"]>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 3. ABOUT SECTION - Medium Gray with Strong Top Border */
+    .about-section,
+    #about,
+    section[class*="about"] {
+      background: #242424 !important;
+      border-top: 3px solid rgba(102, 126, 234, 0.5) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 60px 20px;
+    }
+
+    .about-card,
+    #about div[class*="rounded-2xl"] {
+      background: rgba(30, 30, 30, 0.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .about-card:hover,
+    #about div[class*="rounded-2xl"]:hover {
+      background: rgba(40, 40, 40, 0.9) !important;
+      border-color: rgba(102, 126, 234, 0.5);
+      transform: translateY(-4px);
+    }
+
+    /* 4. CURRICULUM SECTION - Dark with Purple Left Accent */
+    .curriculum-section,
+    #curriculum {
+      background: #1e1e1e !important;
+      border-left: 4px solid rgba(118, 75, 162, 0.6) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 60px 24px;
+    }
+
+    .curriculum-card,
+    #curriculum div[class*="gradient-border"] {
+      background: rgba(40, 40, 40, 0.7) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 3px solid transparent;
+    }
+
+    .curriculum-card:hover,
+    .curriculum-card.expanded,
+    #curriculum div[class*="gradient-border"]:hover {
+      background: rgba(50, 50, 50, 0.9) !important;
+      border-left-color: rgba(102, 126, 234, 0.8) !important;
+    }
+
+    /* 5. LEARNING LEVELS - Medium with Gradient Top Border */
+    .learning-levels-section,
+    #learning-levels {
+      background: #222222 !important;
+      border-top: 2px solid transparent !important;
+      border-image: linear-gradient(90deg,
+          rgba(102, 126, 234, 0.5),
+          rgba(118, 75, 162, 0.5)) 1 !important;
+      padding: 60px 20px;
+    }
+
+    .level-card,
+    #learning-levels div[class*="rounded-2xl"] {
+      background: rgba(35, 35, 35, 0.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 6. PRICING SECTION - Dark with Grid Pattern */
+    .pricing-section,
+    .learning-formats-section,
+    #pricing {
+      background: #1c1c1c !important;
+      position: relative;
+      border-top: 2px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+      padding: 60px 20px;
+    }
+
+    /* Grid pattern overlay */
+    .pricing-section::before,
+    #pricing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .pricing-card,
+    #pricing div[class*="gradient-border"] {
+      background: rgba(36, 36, 36, 0.9) !important;
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-card:hover,
+    #pricing div[class*="gradient-border"]:hover {
+      border-color: rgba(102, 126, 234, 0.6);
+      transform: scale(1.02);
+      box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+    }
+
+    /* 7. TEAM SECTION - Dark with Bottom Gradient Border */
+    .team-section,
+    .founder-section,
+    #team {
+      background: #1e1e1e !important;
+      border-bottom: 3px solid transparent !important;
+      border-image: linear-gradient(90deg,
+          rgba(118, 75, 162, 0.5),
+          rgba(102, 126, 234, 0.5)) 1 !important;
+      padding: 60px 20px;
+    }
+
+    .team-card,
+    #team div[class*="rounded-2xl"] {
+      background: rgba(42, 42, 42, 0.7) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 8. FOOTER - Darkest with Full Gradient Top Border */
+    footer {
+      background: #1a1a1a !important;
+      border-top: 3px solid transparent !important;
+      border-image: linear-gradient(90deg,
+          rgba(102, 126, 234, 0.6),
+          rgba(118, 75, 162, 0.6),
+          rgba(102, 126, 234, 0.6)) 1 !important;
+      padding: 40px 20px;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer-link:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+    }
+
+    .disclaimer-content,
+    #footer-disclaimer>div {
+      background: rgba(36, 36, 36, 0.6) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid rgba(102, 126, 234, 0.4);
+    }
+
+    /* 9. CHATBOT - Glassmorphism with Gradient */
+    .chat-bubble-premium,
+    .chat-button {
+      background: linear-gradient(135deg, #667eea, #764ba2) !important;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.5);
+    }
+
+    .chat-widget-premium,
+    .chat-box {
+      background: rgba(26, 26, 26, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .chat-header-premium,
+    .chat-header {
+      background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    }
+
+    .chat-messages-premium,
+    .chat-body {
+      background: linear-gradient(180deg, #1e1e1e, #242424) !important;
+    }
+
+    .msg-bot-premium,
+    .chat-input-group input,
+    .chat-input-group textarea {
+      background: #323232 !important;
+      border: 1px solid #404040;
     }
 
     .perspective-container {
@@ -1477,10 +1749,333 @@
         text-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
       }
 
-      /* Native App Feel for Buttons */
-      button,
-      a.bg-blue-600 {
-        box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39) !important;
+    }
+
+    /* Native App Feel for Buttons */
+    /* MOBILE UI FIXES (CRITICAL UPDATE - 3 LAYER MENU) */
+    @media (max-width: 768px) {
+
+      /* 1. Mobile Menu - Dropdown Style */
+      #mobile-menu {
+        display: none;
+        /* Hidden by default */
+        position: absolute !important;
+        top: 100% !important;
+        right: 20px !important;
+        background: rgba(26, 26, 26, 0.98) !important;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px !important;
+        padding: 16px !important;
+        margin-top: 8px !important;
+        z-index: 9999 !important;
+        min-width: 220px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+
+      /* When active/open */
+      #mobile-menu.active {
+        display: block !important;
+      }
+
+      #mobile-menu a,
+      .mobile-nav-item,
+      [class*="mobile-menu"] a {
+        color: #ffffff !important;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.05);
+        margin-bottom: 8px;
+        padding: 12px 16px !important;
+        min-height: 52px !important;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 17px !important;
+        transition: background 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      #mobile-menu a:active,
+      .mobile-nav-item:active {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      /* Hero section - Optimized padding */
+      .hero-section,
+      #hero,
+      section[class*="hero"] {
+        padding: 0px 24px 40px 24px !important;
+        /* Aggressive top-only reduction (Zero gap) */
+        min-height: auto !important;
+        text-align: center !important;
+      }
+
+      .hero-container {
+        padding: 0 !important;
+        margin: 0 auto !important;
+      }
+
+      /* Tighten spacing between elements */
+      .hero-heading,
+      h1[class*="hero"],
+      .hero-section h1,
+      .hero-section-mobile h1 {
+        margin-bottom: 12px !important;
+        /* Reduced from 16px */
+        padding-top: 0 !important;
+        font-size: 1.875rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-subheading,
+      h2[class*="hero"],
+      .hero-section h2,
+      .hero-section-mobile h2 {
+        margin-bottom: 16px !important;
+        /* Reduced from 24px */
+        font-size: 1.125rem !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+      }
+
+      .hero-description,
+      .hero-section p {
+        margin-bottom: 24px !important;
+        /* Reduced from 32px */
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+      }
+
+      .hero-buttons,
+      .hero-cta {
+        margin-top: 0 !important;
+      }
+
+      /* Hero description - compact */
+      .hero-description,
+      /* Hero section images/mockups */
+      .hero-dashboard,
+      .hero-mockup,
+      .hero-image,
+      .hero-section img {
+        margin-top: 24px !important;
+        max-height: 350px !important;
+        object-fit: contain;
+      }
+
+      /* 3. Curriculum Cards - Higher Contrast */
+      .curriculum-card,
+      .card-3d,
+      .gradient-border,
+      [class*="curriculum"]>div[class*="card"] {
+        background: rgba(51, 65, 85, 0.65) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        padding: 24px !important;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      /* Darker when expanded */
+      .curriculum-card[data-expanded="true"],
+      .curriculum-card.expanded,
+      .card-3d.expanded {
+        background: rgba(51, 65, 85, 0.8) !important;
+      }
+
+      /* 4. Footer Links - Touch Targets */
+      .footer-link,
+      footer a,
+      footer ul li a {
+        display: block;
+        padding: 14px 0 !important;
+        margin: 4px 0;
+        min-height: 48px !important;
+        font-size: 16px !important;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* 5. Chatbot Position - Fixed High */
+      .chat-bubble {
+        bottom: 88px !important;
+        /* Fixed above footer */
+        right: 20px !important;
+        z-index: 9999 !important;
+        width: 56px !important;
+        height: 56px !important;
+      }
+
+      .chat-widget {
+        bottom: 140px !important;
+        /* Higher widget too */
+        right: 12px !important;
+        width: calc(100vw - 24px) !important;
+      }
+    }
+
+    /* Desktop - Optimized density */
+    @media (min-width: 769px) {
+
+      .hero-section,
+      #hero,
+      section[class*="hero"] {
+        padding: 0px 48px 60px 48px !important;
+        /* Aggressive top-only reduction (Zero gap) */
+        min-height: auto !important;
+      }
+
+      .hero-heading {
+        margin-bottom: 16px !important;
+      }
+
+      .hero-subheading {
+        margin-bottom: 20px !important;
+      }
+
+      .hero-description {
+        margin-bottom: 32px !important;
+      }
+    }
+
+    /* ========================================
+       MOBILE HEADER - NUCLEAR FIX
+       ======================================== */
+
+    @media (max-width: 768px) {
+
+      /* Force header to exact specifications */
+      header,
+      nav,
+      .header,
+      .navbar,
+      .mobile-header-fix {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        align-items: center !important;
+        gap: 16px !important;
+        padding: 14px 20px !important;
+        height: 64px !important;
+        background: rgba(10, 31, 61, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* FORCE remove any conflicting styles */
+      header *,
+      nav *,
+      .mobile-header-fix * {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        float: none !important;
+      }
+
+      /* Left container: Logo + Brand Text */
+      header>a:first-child,
+      nav>a:first-child,
+      .mobile-header-fix>a:first-child {
+        display: grid !important;
+        grid-template-columns: 40px 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 0 12px !important;
+        align-items: center !important;
+        text-decoration: none !important;
+        height: 40px !important;
+      }
+
+      /* Logo image - EXACT positioning */
+      header>a:first-child>img,
+      nav>a:first-child>img,
+      .mobile-header-fix>a:first-child>div:first-child img {
+        grid-row: 1 / 3 !important;
+        grid-column: 1 !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 8px !important;
+        object-fit: contain !important;
+        align-self: center !important;
+      }
+
+      /* Brand name container */
+      header>a:first-child>div,
+      nav>a:first-child>div,
+      .mobile-header-fix>a:first-child>div.brand-text {
+        grid-column: 2 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 2px !important;
+        align-self: center !important;
+        line-height: 1 !important;
+      }
+
+      /* "Rupeevalcore" text */
+      .brand-name {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+      }
+
+      /* "Finance Education" text */
+      .brand-tagline {
+        font-size: 11px !important;
+        font-weight: 400 !important;
+        color: rgba(226, 232, 240, 0.7) !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        white-space: nowrap !important;
+      }
+
+      /* Hamburger button - EXACT positioning */
+      header>button,
+      nav>button,
+      .mobile-header-fix>button,
+      .hamburger,
+      .menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        align-self: center !important;
+        justify-self: end !important;
+      }
+
+      /* Hamburger icon */
+      .hamburger svg,
+      .menu-toggle svg {
+        width: 24px !important;
+        height: 24px !important;
+        color: #ffffff !important;
+      }
+
+      /* Hover state */
+      .hamburger:hover,
+      .menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
       }
     }
   </style>
@@ -1495,15 +2090,17 @@
 
   <!-- NAVBAR -->
   <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl safe-top">
-    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5 group">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between mobile-header-fix">
+      <a href="/" class="flex items-center gap-2.5 group logo-container">
         <div class="relative w-9 h-9 md:w-11 md:h-11 flex items-center justify-center">
           <img src="/logo.jpg" alt="Rupeevalcore Logo"
             class="w-full h-full object-contain rounded-lg group-hover:scale-105 transition-transform duration-300 shadow-lg" />
         </div>
-        <div class="flex flex-col justify-center">
-          <span class="text-[15px] md:text-base font-bold tracking-tight text-white leading-tight">Rupeevalcore</span>
-          <span class="text-[10px] md:text-xs font-medium text-slate-400 tracking-wide">Finance Education</span>
+        <div class="flex flex-col justify-center brand-text">
+          <span
+            class="text-[15px] md:text-base font-bold tracking-tight text-white leading-tight brand-name">Rupeevalcore</span>
+          <span class="text-[10px] md:text-xs font-medium text-slate-400 tracking-wide brand-tagline">Finance
+            Education</span>
         </div>
       </a>
 
@@ -1524,28 +2121,34 @@
       </a>
 
       <!-- Mobile Menu Button -->
-      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-        class="md:hidden flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+      <button id="menu-toggle" aria-label="Menu"
+        class="md:hidden flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors hamburger menu-toggle">
         <iconify-icon icon="solar:hamburger-menu-linear" width="20" class="text-white"></iconify-icon>
       </button>
     </div>
 
     <div id="mobile-menu"
-      class="hidden absolute top-16 md:top-20 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-white/10 p-6 md:hidden z-40">
-      <div class="flex flex-col gap-6 text-sm text-slate-400">
-        <a href="#curriculum" class="hover:text-white">Curriculum</a>
-        <a href="#learning-levels" class="hover:text-white">Learning Levels</a>
-        <a href="#pricing" class="hover:text-white">Learning Options</a>
-        <a href="#about" class="hover:text-white">About Us</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
+      class="absolute top-16 md:top-20 left-0 w-full bg-slate-900/98 backdrop-blur-xl border-b border-white/10 p-6 md:hidden z-50 shadow-2xl transition-all duration-300">
+      <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
+        <a href="#curriculum"
+          class="hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">Curriculum</a>
+        <a href="#learning-levels"
+          class="hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">Learning Levels</a>
+        <a href="#pricing" class="hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">Learning
+          Options</a>
+        <a href="#about" class="hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">About Us</a>
+        <a href="#contact" class="hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">Contact</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
-          target="_blank" rel="noopener noreferrer" class="text-blue-500 font-semibold">Register</a>
+          target="_blank" rel="noopener noreferrer"
+          class="text-blue-400 font-semibold hover:bg-white/5 px-4 py-3 rounded-lg transition-colors">Register for
+          Workshop</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="lg:pt-48 lg:pb-32 overflow-hidden pt-32 pb-20 relative perspective-container">
+  <section
+    class="hero-section-mobile lg:pt-0 lg:pb-16 overflow-hidden pt-0 pb-10 relative perspective-container parallax-container">
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-800/15 rounded-full blur-[130px] -z-10 opacity-50 pointers-none mix-blend-screen animate-pulse">
     </div>
@@ -1553,8 +2156,9 @@
       class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[130px] -z-10 pointer-events-none opacity-40 mix-blend-screen">
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <div class="space-y-8 animate-fade-in-up">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div
+        class="space-y-6 md:space-y-8 animate-fade-in-up flex flex-col items-center lg:items-start text-center lg:text-left">
         <div
           class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20 text-[11px] tracking-wide uppercase text-blue-300 font-medium shadow-[0_0_20px_rgba(0,102,204,0.2)] ring-1 ring-blue-600/30">
           <span class="relative flex h-2 w-2">
@@ -1564,59 +2168,37 @@
           Workshops in Chennai &amp; Online
         </div>
 
-        <h1 class="lg:text-7xl leading-[1.05] text-gradient text-5xl font-semibold tracking-tight drop-shadow-2xl">
+        <h1
+          class="text-4xl md:text-5xl lg:text-7xl leading-tight lg:leading-[1.05] text-gradient font-bold tracking-tight drop-shadow-2xl max-w-lg md:max-w-none">
           Financial Education Made Accessible
         </h1>
 
-        <h2 class="text-2xl lg:text-3xl font-medium text-white/90 tracking-tight">
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-medium text-slate-200 tracking-tight max-w-md md:max-w-none">
           Finance Made Simple. Life Made Smarter.
         </h2>
 
-        <p class="leading-relaxed text-lg text-slate-400 max-w-xl">
-          Practical workshops on money basics, stock market fundamentals, tax and insurance awareness — designed for
+        <p class="leading-relaxed text-base md:text-lg text-slate-400 max-w-md lg:max-w-xl px-2 lg:px-0">
+          Practical finance workshops in Chennai covering money basics, stock market fundamentals, tax and insurance
+          awareness — designed for
           beginners, with optional intermediate and advanced sessions.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <div class="flex flex-col gap-4 pt-4 w-full px-4 sm:px-0 hero-buttons-mobile">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMErk9Inyzc0XohARr2XNnyVcVDVdZCRTiHcByYUScHtzEjg/viewform"
             target="_blank" rel="noopener noreferrer"
-            class="text-background hover:bg-slate-200 transition-colors shadow-white/5 text-sm font-semibold text-center bg-white rounded-lg pt-3.5 pr-8 pb-3.5 pl-8 shadow-lg">
+            class="w-full text-background hover:bg-slate-200 transition-colors shadow-white/5 text-base font-semibold text-center bg-white rounded-xl py-3.5 px-8 shadow-lg">
             Register for Workshop
           </a>
           <a href="https://wa.me/918248589694" target="_blank" rel="noopener noreferrer"
-            class="px-8 py-3.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors text-center backdrop-blur-sm">
+            class="w-full px-8 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white text-base font-medium hover:bg-white/10 transition-colors text-center backdrop-blur-sm">
             WhatsApp Us
           </a>
-          <a href="#curriculum"
-            class="px-8 py-3.5 rounded-lg bg-transparent border border-white/20 text-white text-sm font-medium hover:bg-white/5 transition-colors text-center backdrop-blur-sm">
-            Learn more
-          </a>
+
         </div>
 
-        <!-- Hidden note (info icon) -->
-        <div class="pt-1 max-w-xl">
-          <button type="button"
-            class="inline-flex items-center gap-2 text-xs font-medium text-slate-400 hover:text-white transition-colors"
-            onclick="toggleAccordion('hero-note','accordion-global')" aria-controls="hero-note" aria-expanded="false">
-            <span
-              class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/[0.04] border border-white/10">
-              <iconify-icon icon="solar:info-circle-linear" width="16" class="text-slate-300"
-                stroke-width="1.5"></iconify-icon>
-            </span>
-            Learn more
-            <iconify-icon icon="solar:alt-arrow-down-linear" width="14" class="text-slate-500"
-              stroke-width="1.5"></iconify-icon>
-          </button>
 
-          <div id="hero-note" class="hidden mt-3 rounded-xl border border-white/10 bg-white/[0.02] p-4">
-            <p class="text-sm text-slate-400 leading-relaxed">
-              These workshops focus on financial awareness and education only. No investment advice, stock tips, or
-              recommendations are provided.
-            </p>
-          </div>
-        </div>
 
-        <div class="pt-2 flex flex-wrap gap-3 text-xs text-slate-400">
+        <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3 text-xs text-slate-400">
           <div class="inline-flex items-center gap-2 rounded-full bg-white/[0.03] border border-white/10 px-3 py-1.5">
             <iconify-icon icon="solar:map-point-linear" width="16" class="text-slate-300"
               stroke-width="1.5"></iconify-icon>
@@ -2551,76 +3133,7 @@
 
 
 
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="mb-16 text-center reveal">
-      <h2 class="text-3xl font-semibold tracking-tight mb-4 text-white">Founder &amp; Team</h2>
-      <p class="text-slate-400">Dedicated to financial education and awareness.</p>
-    </div>
 
-    <div class="grid md:grid-cols-3 gap-6 reveal" data-accordion-group="team">
-      <div class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-base font-medium text-white">Shanthi Chitrarasu</h3>
-            <p class="text-sm text-slate-400 mt-1">Founder</p>
-          </div>
-          <button type="button"
-            class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.06]"
-            onclick="toggleAccordion('tm-1','team')" aria-controls="tm-1" aria-expanded="false">
-            <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-300"
-              stroke-width="1.5"></iconify-icon>
-          </button>
-        </div>
-        <div id="tm-1" class="hidden mt-4 text-sm text-slate-300 leading-relaxed">
-          Shanthi founded Rupeevalcore with the objective of improving financial awareness among individuals who have
-          not been exposed to basic money concepts. The workshops are designed to explain financial topics in a
-          simple, structured, and easy-to-understand manner. The focus is on education and awareness only, without
-          providing investment advice or recommendations.
-        </div>
-      </div>
-
-      <div class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-base font-medium text-white">Chitrarasu P</h3>
-            <p class="text-sm text-slate-400 mt-1">Operations &amp; Administration</p>
-          </div>
-          <button type="button"
-            class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.06]"
-            onclick="toggleAccordion('tm-2','team')" aria-controls="tm-2" aria-expanded="false">
-            <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-300"
-              stroke-width="1.5"></iconify-icon>
-          </button>
-        </div>
-        <div id="tm-2" class="hidden mt-4 text-sm text-slate-300 leading-relaxed">
-          Coordination and operations support for workshops and schedules.
-        </div>
-      </div>
-
-      <div class="p-7 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-base font-medium text-white">Manikandan C</h3>
-            <p class="text-sm text-slate-400 mt-1">Trainer</p>
-          </div>
-          <button type="button"
-            class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/[0.06]"
-            onclick="toggleAccordion('tm-3','team')" aria-controls="tm-3" aria-expanded="false">
-            <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="text-slate-300"
-              stroke-width="1.5"></iconify-icon>
-          </button>
-        </div>
-        <div id="tm-3" class="hidden mt-4 text-sm text-slate-300 leading-relaxed">
-          NISM-Series-XII: Securities Markets Foundation certified trainer specializing in interactive,
-          beginner-friendly financial education. Delivers structured workshop sessions with clear explanations,
-          practical examples, and open Q&A to ensure participants grasp core concepts comfortably. Focuses on
-          making complex financial topics simple and accessible for first-time learners.
-        </div>
-      </div>
-    </div>
-  </div>
-  >>>>>>> 1e91e53 (Complete website optimization - Version 7)
-  </section>
 
   <!-- FINAL CTA -->
   <section id="register" class="py-24 border-t border-white/5 bg-slate-950 relative overflow-hidden">
@@ -2646,24 +3159,7 @@
           </a>
         </div>
 
-        <div class="mt-6">
-          <button type="button"
-            class="inline-flex items-center gap-2 text-xs font-medium text-slate-400 hover:text-white transition-colors"
-            onclick="toggleAccordion('cta-note','accordion-global')" aria-controls="cta-note" aria-expanded="false">
-            <span
-              class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/[0.04] border border-white/10">
-              <iconify-icon icon="solar:info-circle-linear" width="16" class="text-slate-300"
-                stroke-width="1.5"></iconify-icon>
-            </span>
-            Learn more
-            <iconify-icon icon="solar:alt-arrow-down-linear" width="14" class="text-slate-500"
-              stroke-width="1.5"></iconify-icon>
-          </button>
 
-          <div id="cta-note" class="hidden mt-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-left">
-            <p class="text-sm text-slate-400 leading-relaxed">Registration is for educational workshops only.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -2868,7 +3364,7 @@
         });
       } else {
         // Global group (shared across page) - one open at a time recommended
-        const globalPanels = ["hero-note", "who-note", "trust-note", "cta-note", "footer-disclaimer"];
+        const globalPanels = ["footer-disclaimer"];
         globalPanels.forEach((id) => {
           if (id !== panelId) {
             const el = document.getElementById(id);
@@ -2889,114 +3385,7 @@
     }
   </script>
 
-  <!-- Chat Widget -->
-  <div class="chat-widget">
-    <div class="chat-box" id="chatBox">
-      <div class="chat-header">
-        <div>
-          <h3 class="text-base font-semibold">Contact Us</h3>
-          <p class="text-xs opacity-80">We'll get back to you soon!</p>
-        </div>
-        <button class="chat-close" onclick="toggleChat()" aria-label="Close chat">×</button>
-      </div>
-      <div class="chat-body">
-        <form id="chatForm">
-          <div class="chat-input-group">
-            <label for="chatName">Name *</label>
-            <input type="text" id="chatName" name="name" required placeholder="Your full name">
-          </div>
-          <div class="chat-input-group">
-            <label for="chatEmail">Email *</label>
-            <input type="email" id="chatEmail" name="email" required placeholder="your@email.com">
-          </div>
-          <div class="chat-input-group">
-            <label for="chatPhone">Phone *</label>
-            <input type="tel" id="chatPhone" name="phone" required placeholder="+91 XXXXX XXXXX">
-          </div>
-          <div class="chat-input-group">
-            <label for="chatMessage">Message *</label>
-            <textarea id="chatMessage" name="message" required placeholder="How can we help you?"></textarea>
-          </div>
-          <button type="submit" class="chat-submit" id="chatSubmit">Send Message</button>
-        </form>
-        <div class="chat-success" id="chatSuccess">
-          ✓ Message sent successfully! We'll contact you soon.
-        </div>
-      </div>
-    </div>
-    <div class="chat-button" onclick="toggleChat()">
-      <div class="pulse-ring"></div>
-      <iconify-icon icon="solar:chat-round-line-bold" width="28" class="text-white"></iconify-icon>
-    </div>
-  </div>
 
-  <script>
-    // Chat Widget Functions
-    function toggleChat() {
-      const chatBox = document.getElementById('chatBox');
-      chatBox.classList.toggle('active');
-    }
-
-    // Handle Chat Form Submission
-    document.getElementById('chatForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-
-      const submitBtn = document.getElementById('chatSubmit');
-      const successMsg = document.getElementById('chatSuccess');
-      const form = this;
-
-      // Disable submit button
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      // Get form data
-      const formData = {
-        name: document.getElementById('chatName').value,
-        email: document.getElementById('chatEmail').value,
-        phone: document.getElementById('chatPhone').value,
-        message: document.getElementById('chatMessage').value,
-        timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
-      };
-
-      try {
-        // Google Apps Script URL - Connected to Google Sheet
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyArVVqN3gPnX7QPsQgytlyQPlD-_haeVqbznj-U6A87tyNqeiqj4GX151c-rsm-ktThw/exec';
-
-        // Use URLSearchParams for reliable data transmission
-        const params = new URLSearchParams();
-        params.append('name', document.getElementById('chatName').value);
-        params.append('email', document.getElementById('chatEmail').value);
-        params.append('phone', document.getElementById('chatPhone').value);
-        params.append('message', document.getElementById('chatMessage').value);
-
-        const response = await fetch(scriptURL, {
-          method: 'POST',
-          body: params,
-          mode: 'no-cors' // Important for Google Apps Script
-        });
-
-        // Show success message
-        form.style.display = 'none';
-        successMsg.classList.add('show');
-
-        // Reset form after 3 seconds and close chat
-        setTimeout(() => {
-          form.reset();
-          form.style.display = 'block';
-          successMsg.classList.remove('show');
-          toggleChat();
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-        }, 3000);
-
-      } catch (error) {
-        console.error('Error:', error);
-        alert('There was an error sending your message. Please try calling us directly at +91 82485 89694');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      }
-    });
-  </script>
 
   <!-- Premium 3D Effects Activation Script -->
   <script>
@@ -3409,6 +3798,580 @@
     };
 
     document.addEventListener('DOMContentLoaded', animateCounters);
+  </script>
+  <!-- Premium Chatbot Complete -->
+  <style>
+    /* Chatbot Bubble */
+    .chat-bubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+      z-index: 10000;
+      font-size: 32px;
+      color: white;
+      transition: transform 0.3s ease;
+      animation: pulse-bubble 2s infinite;
+    }
+
+    .chat-bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+    }
+
+    .pulse-ring {
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      border: 2px solid #667eea;
+      border-radius: 50%;
+      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse-bubble {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Chat Widget */
+    .chat-widget {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 400px;
+      max-height: 600px;
+      background: rgba(10, 31, 61, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      flex-direction: column;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      animation: fadeIn 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-close-btn {
+      cursor: pointer;
+      font-size: 28px;
+      line-height: 1;
+      opacity: 0.9;
+      transition: all 0.2s;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .chat-close-btn:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.5);
+      scrollbar-width: thin;
+      scrollbar-color: #667eea rgba(255, 255, 255, 0.1);
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: #667eea;
+      border-radius: 3px;
+    }
+
+    .msg {
+      margin: 12px 0;
+      padding: 12px 16px;
+      border-radius: 16px;
+      max-width: 75%;
+      word-wrap: break-word;
+      animation: fadeIn 0.4s ease;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .msg-user {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      margin-left: auto;
+      text-align: right;
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    }
+
+    .msg-bot {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e8eaed;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .msg-success {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+      margin: 12px auto;
+      text-align: center;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(17, 153, 142, 0.3);
+    }
+
+    .course-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      background: white;
+      border: 1px solid #667eea;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #4a5568;
+      text-align: left;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-btn:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+      border-color: transparent;
+    }
+
+    .chat-input-area {
+      padding: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      gap: 10px;
+      background: rgba(10, 31, 61, 0.5);
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+      outline: none;
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+
+    .chat-input:focus {
+      border-color: #667eea;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .send-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .send-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .restart-btn {
+      display: block;
+      margin: 16px auto;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .restart-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+    }
+
+    @media (max-width: 500px) {
+      .chat-widget {
+        width: calc(100vw - 40px);
+        max-height: calc(100vh - 120px);
+        bottom: 90px;
+      }
+    }
+  </style>
+
+  <div class="chat-bubble" onclick="toggleChat()">
+    <div class="pulse-ring"></div>
+    💬
+  </div>
+
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-header">
+      <div>
+        <strong style="font-size: 1.1rem;">RupeeBot</strong><br>
+        <span style="font-size: 12px; opacity: 0.9; font-weight: 300;">Online Now</span>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()">×</button>
+    </div>
+
+    <div id="chat-messages" class="chat-messages"></div>
+
+    <div class="chat-input-area" id="input-container">
+      <input id="chat-input" class="chat-input" type="text" placeholder="Type your answer..."
+        onkeypress="if(event.key === 'Enter') handleUserInput()">
+      <button onclick="handleUserInput()" class="send-btn">
+        <iconify-icon icon="solar:plain-bold" width="20"></iconify-icon>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPTURL = "https://script.google.com/macros/s/AKfycbyArVVqN3gPnX7QPsQgytlyQPlD-_haeVqbznj-U6A87tyNqeiqj4GX151c-rsm-ktThw/exec";
+
+    let chatState = {
+      step: 0,
+      name: '',
+      email: '',
+      phone: '',
+      course: ''
+    };
+
+    const courses = [
+      "Personal Finance & Money Management",
+      "Stock Market Basics",
+      "Insurance & Tax Awareness",
+      "Investment Planning",
+      "College Financial Literacy Program",
+      "Complete Course (All Modules + Certificate)"
+    ];
+
+    const questions = [
+      "Hi! Welcome to Rupeevalcore. 👋",
+      "I'm RupeeBot. What's your name?",
+      "Nice to meet you, {name}! 😊\n\nWhat's your email address?",
+      "Thanks! And your phone number? (e.g., +91 99999...)",
+      "Perfect! Which finance workshop interests you?"
+    ];
+
+    function toggleChat() {
+      const widget = document.getElementById('chat-widget');
+      const isHidden = widget.style.display === 'none' || !widget.style.display;
+
+      widget.style.display = isHidden ? 'flex' : 'none';
+
+      if (isHidden) {
+        // Reset state
+        chatState = { step: 0, name: '', email: '', phone: '', course: '' };
+        document.getElementById('chat-messages').innerHTML = '';
+        document.getElementById('input-container').style.display = 'flex';
+        document.getElementById('chat-input').disabled = false;
+        document.getElementById('chat-input').placeholder = 'Type your answer...';
+
+        // Start conversation
+        setTimeout(() => {
+          addMessage(questions[0], 'bot');
+          setTimeout(() => addMessage(questions[1], 'bot'), 800);
+        }, 400);
+      }
+    }
+
+    function handleUserInput() {
+      const input = document.getElementById('chat-input');
+      const userAnswer = input.value.trim();
+
+      if (!userAnswer) return;
+
+      input.value = '';
+      addMessage(userAnswer, 'user');
+
+      // Process input after a short delay
+      setTimeout(() => {
+        switch (chatState.step) {
+          case 0: // Name
+            if (userAnswer.length < 2) {
+              addMessage("Please enter a valid name (at least 2 letters).", 'bot');
+              return;
+            }
+            chatState.name = userAnswer;
+            chatState.step++;
+            setTimeout(() => {
+              addMessage(questions[2].replace('{name}', chatState.name), 'bot');
+            }, 600);
+            break;
+
+          case 1: // Email
+            if (!validateEmail(userAnswer)) {
+              addMessage("Oops! Please enter a valid email (e.g., name@example.com)", 'bot');
+              return;
+            }
+            chatState.email = userAnswer;
+            chatState.step++;
+            setTimeout(() => addMessage(questions[3], 'bot'), 600);
+            break;
+
+          case 2: // Phone
+            if (!validatePhone(userAnswer)) {
+              addMessage("Please enter a valid phone number (e.g., +91 9999999999)", 'bot');
+              return;
+            }
+            chatState.phone = userAnswer;
+            chatState.step++;
+
+            // Show question AND course buttons
+            setTimeout(() => {
+              addMessage(questions[4], 'bot');
+              setTimeout(() => {
+                showCourseButtons();
+              }, 600);
+            }, 600);
+            break;
+
+          case 3: // Course (Manual Entry fallback)
+            chatState.course = userAnswer;
+            confirmAndSubmit();
+            break;
+        }
+      }, 400);
+    }
+
+    function showCourseButtons() {
+      const messagesDiv = document.getElementById('chat-messages');
+      const btnContainer = document.createElement('div');
+      btnContainer.style.cssText = 'margin: 12px 0; max-width: 90%; animation: fadeIn 0.5s ease;';
+
+      // Hide input area during selection
+      document.getElementById('input-container').style.display = 'none';
+
+      courses.forEach((course, index) => {
+        const btn = document.createElement('div');
+        btn.className = 'course-btn';
+        btn.textContent = course;
+        btn.onclick = () => selectCourse(course);
+        btn.style.animation = `fadeIn 0.4s ease ${index * 0.1}s backwards`;
+        btnContainer.appendChild(btn);
+      });
+
+      messagesDiv.appendChild(btnContainer);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function selectCourse(course) {
+      chatState.course = course;
+      addMessage(course, 'user');
+
+      // Remove buttons
+      const buttons = document.querySelectorAll('.course-btn');
+      buttons.forEach(b => b.parentElement.remove()); // Remove container
+
+      setTimeout(() => confirmAndSubmit(), 600);
+    }
+
+    function confirmAndSubmit() {
+      addMessage("Great! Submitting your details...", 'bot');
+
+      // Use URLSearchParams for Google Apps Script compatibility
+      const formData = new URLSearchParams();
+      formData.append('name', chatState.name);
+      formData.append('email', chatState.email);
+      formData.append('phone', chatState.phone);
+      formData.append('course', chatState.course);
+      formData.append('message', `Interested in Course: ${chatState.course}`);
+
+      // Simplified fetch call
+      fetch(SCRIPTURL, {
+        method: 'POST',
+        body: formData
+      })
+        .then(() => {
+          addMessage(`Thank you, ${chatState.name}! We have received your request for <b>${chatState.course}</b>.`, 'bot', true);
+          addMessage(`We'll contact you at ${chatState.email} within 24 hours.`, 'bot');
+
+          // Restart button
+          const btn = document.createElement('button');
+          btn.className = 'restart-btn';
+          btn.textContent = 'Start New Chat';
+          btn.onclick = () => toggleChat();
+          document.getElementById('chat-messages').appendChild(btn);
+          const container = document.getElementById('chat-messages');
+          container.scrollTop = container.scrollHeight;
+        })
+        .catch(error => {
+          addMessage("Error submitting form. Please contact us directly.", 'bot');
+          console.error('Error!', error);
+        });
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePhone(phone) {
+      return phone.replace(/[^0-9]/g, '').length >= 10;
+    }
+
+    function addMessage(text, sender, isHTML = false) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = sender === 'bot' ? 'msg msg-bot' : 'msg msg-user';
+      if (isHTML) div.innerHTML = text;
+      else div.textContent = text;
+
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    /* MOBILE MENU - BULLETPROOF TOGGLE */
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuButton || !menu) {
+        console.error('Menu button or menu not found');
+        return;
+      }
+
+      // Standard Toggle Function
+      function toggleMenu(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        menu.classList.toggle('active');
+        console.log('Menu toggled:', menu.classList.contains('active'));
+      }
+
+      // Add Click Handler
+      menuButton.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (e) {
+        if (menu.classList.contains('active')) {
+          if (!menu.contains(e.target) && !menuButton.contains(e.target)) {
+            menu.classList.remove('active');
+            console.log('Menu closed via outside click');
+          }
+        }
+      });
+
+      // Close menu on ESC key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('active')) {
+          menu.classList.remove('active');
+        }
+      });
+
+      // Handle internal menu links (Close on Click)
+      const menuLinks = menu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Rupeevalcore",
+      "description": "Financial education workshops on personal finance, stock markets, and investment basics",
+      "url": "https://www.rupeevalcore.in",
+      "telephone": "+91-8248589694",
+      "email": "contact@rupeevalcoregmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "areaServed": "Chennai, Tamil Nadu, India",
+      "offers": {
+        "@type": "Offer",
+        "name": "Financial Education Workshops",
+        "priceRange": "₹499-Custom"
+      }
+    }
   </script>
 </body>
 

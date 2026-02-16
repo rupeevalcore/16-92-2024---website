@@ -2,7 +2,7 @@
     "version": 2,
     "installCommand": "echo 'Skipping install'",
     "buildCommand": "echo 'Skipping build'",
-    "outputDirectory": "public",
+    "outputDirectory": ".",
     "rewrites": [
         {
             "source": "/(.*)",
