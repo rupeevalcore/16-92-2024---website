@@ -2159,11 +2159,28 @@
       }
     }
 
-    /* Hero section must be visible immediately on load */
+    /* CRITICAL: Force hero section immediate visibility - must override all animation classes */
     section:first-of-type,
-    section:first-of-type>* {
+    section:first-of-type>*,
+    section:first-of-type * {
       opacity: 1 !important;
+      visibility: visible !important;
       transform: none !important;
+      transition: none !important;
+    }
+
+    section:first-of-type .container,
+    section:first-of-type .grid,
+    section:first-of-type .flex,
+    section:first-of-type h1,
+    section:first-of-type h2,
+    section:first-of-type p,
+    section:first-of-type button,
+    section:first-of-type a,
+    section:first-of-type div {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
       filter: none !important;
     }
   </style>
@@ -3792,13 +3809,17 @@
         revealObserver.observe(el);
       });
 
-      // Immediately reveal hero section content (safety net)
-      const heroSectionReveal = document.querySelector('section');
+      // Aggressively reveal hero section content (remove ALL animation classes + force inline styles)
+      const heroSectionReveal = document.querySelector('section:first-of-type');
       if (heroSectionReveal) {
-        heroSectionReveal.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale')
-          .forEach(el => el.classList.add('revealed'));
-        heroSectionReveal.querySelectorAll('.reveal')
-          .forEach(el => el.classList.add('active'));
+        heroSectionReveal.classList.remove('scroll-reveal', 'scroll-reveal-left', 'scroll-reveal-right', 'scroll-reveal-scale', 'reveal');
+        heroSectionReveal.querySelectorAll('*').forEach(el => {
+          el.classList.remove('scroll-reveal', 'scroll-reveal-left', 'scroll-reveal-right', 'scroll-reveal-scale', 'reveal');
+          el.classList.add('revealed', 'active');
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.style.transform = 'none';
+        });
       }
 
       // Remove loading spinner
