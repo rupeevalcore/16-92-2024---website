@@ -23,9 +23,11 @@ This repository contains the source code for the Rupeevalcore website, a compreh
 - **Backend**: Google Apps Script (for Chatbot)
 - **Database**: Google Sheets
 
-## Documentation
-
-For full project details, maintenance guides, and troubleshooting, please refer to [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md).
+## 📚 Documentation
+- [Project Overview](docs/README.md)
+- [Technical Guide](docs/TECHNICAL_GUIDE.md)
+- [Business Guide](docs/BUSINESS_GUIDE.md)
+- [Maintenance Guide](docs/MAINTENANCE.md)
 
 ## Version
 

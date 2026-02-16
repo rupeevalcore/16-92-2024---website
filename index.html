@@ -1,4 +1,4 @@
-<html lang="en" class="scroll-smooth">
+﻿<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -2077,7 +2077,69 @@
       .menu-toggle:hover {
         background: rgba(255, 255, 255, 0.1) !important;
       }
+
     }
+
+    /* ============================================
+         EMERGENCY EXTREME FIX - Maximum Strength
+         ============================================ */
+
+    /* Remove all margins and heights */
+    header,
+    nav,
+    .header,
+    .navbar {
+      margin-bottom: 0 !important;
+    }
+
+    .hero-section,
+    .hero-section-mobile,
+    section[class*="hero"] {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      min-height: 0 !important;
+      height: auto !important;
+    }
+
+    /* Remove nested margins */
+    .hero-section>div,
+    .hero-section-mobile>div,
+    .hero-section .max-w-7xl,
+    .hero-section .grid,
+    .hero-section-mobile .max-w-7xl,
+    .hero-section-mobile .grid {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      min-height: 0 !important;
+    }
+
+    /* Badge margins */
+    .hero-section span,
+    [class*="badge"],
+    .badge {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* MAXIMUM STRENGTH - Extreme negative margin */
+    .hero-section-mobile {
+      margin-top: -95vh !important;
+    }
+
+    /* IF ABOVE DOESN'T WORK - Uncomment this absolute positioning */
+    /*
+      .hero-section-mobile {
+        position: relative !important;
+        top: -80vh !important;
+        margin-top: 0 !important;
+        z-index: 1 !important;
+        }
+
+      header, nav {
+        position: relative !important;
+        z-index: 999 !important;
+      }
+      */
   </style>
 </head>
 
@@ -2147,8 +2209,7 @@
   </nav>
 
   <!-- HERO -->
-  <section
-    class="hero-section-mobile lg:pt-0 lg:pb-16 overflow-hidden pt-0 pb-10 relative perspective-container parallax-container">
+  <section class="hero-section-mobile overflow-hidden pb-10 relative perspective-container parallax-container">
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-800/15 rounded-full blur-[130px] -z-10 opacity-50 pointers-none mix-blend-screen animate-pulse">
     </div>
